@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+#your-progress-bar {
+    display: block;
+    background: rgba(255, 198, 39, 1);
+    border-style: none;
+    border-radius: 0px;
+    z-index: 15;
+    width: 100%;
+    max-width:800px;
+    min-height: 165px;
+}
+
+.fundraiser-wrapper {
+  padding: 20px;
+}
+
+.current-funraising-title {
+  text-align: center;
+  color: #003221;
+}
+
+.fundraiser-progress-bar-wrapper {
+  
+}
+
+.fundraiser-progress-bar-details {
+  margin-bottom:5px;
+  padding: 0 15px;
+}
+
+.progress-bar-goal {
+  float: right;
+}
+
+.fundraiser-progress-bar {
+  
+}
+
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  /* Get rid of default border in Firefox. */
+  border: none;
+  
+  /* Dimensions */
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  
+  /* For IE10 */
+  color: #003221; 
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px #003221 inset;
+} 
+
+progress[value]::-webkit-progress-value { 
+  background-color: #003221;
+  border-radius: 20px 0 0 20px;
+}
+
+progress[value]::-moz-progress-bar { 
+  background-color: #003221;
+  border-radius: 20px 0 0 20px;
+}
+
+progress[value]::-moz-progress-value::before {
+  content: attr(value);
+  position: absolute;
+  right: 0;
+  bottom: 25%;
+}
+
+.fundraiser-progress-bar-details-numbers {
+  margin-top:5px;
+  padding: 0 15px;
+}
+
+.progress-bar-percent {
+  position: absolute;
+}
+
+.progress-bar-contributors { 
+  float: right;
+}
+
+
+/* Fallback Styles */
+.fallback-progress-bar {
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 3px #003221 inset;
+  width: 100%;
+  height: 20px;
+  
+  position: relative;
+  display: block;
+}
+  
+.fallback-progress-bar > span {
+  background-color: #003221;
+  border-radius: 2px;
+  display: block;
+  
+  /* Screen Reader Text */
+  text-indent: -9999px;
+}
+    </style>
+</head>
+<body>
+    <div class="fundraiser-wrapper" id="your-progress-bar">
+        <div class="fundraiser-current">
+          <h2 class="current-funraising-title">$15,000</h2>
+        </div>
+        <div class="fundraiser-progress-bar-wrapper">
+          <div class="fundraiser-progress-bar-details">
+              <span class="progress-bar-start">$0</span> <span class="progress-bar-goal">$150,000</span>
+          </div>
+          <div class="fundraiser-progress-bar">
+            <progress value="10" max="100">
+            <div class="fallback-progress-bar">
+                <span style="width:10%;">Progress: 10%</span>
+            </div>
+            </progress>
+          </div>
+          <div class="fundraiser-progress-bar-details-numbers">
+              <span class="progress-bar-percent" style="left: 9%;">10%</span> <span class="progress-bar-contributors"># of Donations</span>
+          </div>
+        </div>
+      </div> 
+</body>
+</html>
