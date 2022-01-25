@@ -1,21 +1,73 @@
-<div class="fundraiser-wrapper" id="your-progress-bar">
-  <div class="fundraiser-current">
-    <h2 class="current-funraising-title">$15,000</h2>
-  </div>
-  <div class="fundraiser-progress-bar-wrapper">
-    <div class="fundraiser-progress-bar-details">
-      <span class="progress-bar-start">$0</span> <span class="progress-bar-goal">$150,000</span>
-    </div>
-    <div class="fundraiser-progress-bar">
-      <progress value="10" max="100">
-        <div class="fallback-progress-bar">
-          <span style="width:10%;">Progress: 10%</span>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript Training</title>
+        <link rel="stylesheet" type="text/css"  href="home-style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    </head>
+    <body>
+        <h1>Welcome!</h1>
+		
+		<div class="fundraiser-wrapper" id="your-progress-bar">
+			<div class="fundraiser-current">
+				<h2 class="current-funraising-title">$15,000</h2>
+			</div>
+			<div class="fundraiser-progress-bar-wrapper">
+				<div class="fundraiser-progress-bar-details">
+					<span class="progress-bar-start">$0</span> <span class="progress-bar-goal">$150,000</span>
+				</div>
+				<div class="fundraiser-progress-bar">
+					<progress value="10" max="100">
+						<div class="fallback-progress-bar">
+							<span style="width:10%;">Progress: 10%</span>
+						</div>
+					</progress>
+				</div>
+				<div class="fundraiser-progress-bar-details-numbers">
+					<span class="progress-bar-percent" style="left: 9%;">10%</span> <span class="progress-bar-contributors"># of
+					Donations</span>
+				</div>
+			</div>
+		</div>
+		
+        <div class="row">
+            <div class="col-md-1" ></div>
+            <div class="col-md-10">
+                <div class="sum" style>
+                    <h3>Selectează suma:</h3>
+                    <button type="button" onclick="add10(this)" class="add10">10€</button>
+                    <button type="button" onclick="add50(this)" class="add50">50€</button>
+                    <button type="button" onclick="add100(this)" class="add100">100€</button>
+                    <button type="button" onclick="add150(this)" class="add150">150€</button>
+                    <!-- Select currrency START-->
+                    <div class="wrapper">
+                        <form class="form-inline">
+                          <label class="sr-only" for="inlineFormInputGroup">Amount</label>
+                          <div class="input-group">
+                            <div class="input-group-addon currency-symbol">$</div>
+                            <input type="text" class="form-control currency-amount" id="inlineFormInputGroup" placeholder="0.00" size="8">
+                            <div class="input-group-addon currency-addon">
+                      
+                              <select class="currency-selector">
+                                <option data-symbol="RON" data-placeholder="0.00" selected>RON</option>
+                                <option data-symbol="€" data-placeholder="0.00">EUR</option>
+                              </select>
+                      
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <!-- Select currrency END-->
+                </div>
+                <div id="square"> </div></div>
+            <div class="col-md-1"></div>
         </div>
-      </progress>
-    </div>
-    <div class="fundraiser-progress-bar-details-numbers">
-      <span class="progress-bar-percent" style="left: 9%;">10%</span> <span class="progress-bar-contributors"># of
-        Donations</span>
-    </div>
-  </div>
-</div>
+		
+        <script src="home-js.js"></script>
+    </body>    
+</html>
