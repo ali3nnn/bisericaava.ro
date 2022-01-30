@@ -6,7 +6,7 @@
     z-index: 15;
     width: 100%;
     /* max-width:800px; */
-    min-height: 100vh;
+    min-height: 25vh;
 }
 
 .fundraiser-wrapper {
@@ -109,4 +109,76 @@ progress[value]::-moz-progress-value::before {
   
   /* Screen Reader Text */
   text-indent: -9999px;
+}
+
+.button {
+  width: 15px;
+  height: 15px;
+  background-color: #f2dede;
+  margin-left: 2px !important;
+}
+p {
+	display: inline;
+}
+
+/* select currency START*/
+.wrapper {
+  padding:4em;
+  padding-bottom: 0;
+}
+
+.form-inline .input-group .form-control, .form-inline .input-group .input-group-addon, .form-inline .input-group .input-group-btn {
+    width: 60px;
+}
+
+.currency-selector {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 4em;
+  height: 100%;
+  padding-left: .5rem;
+  border: 0;
+  background: transparent;
+  
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1024' height='640'><path d='M1017 68L541 626q-11 12-26 12t-26-12L13 68Q-3 49 6 24.5T39 0h952q24 0 33 24.5t-7 43.5z'></path></svg>") 90%/12px 6px no-repeat;
+  
+  font-family: inherit;
+  color: inherit;
+}
+
+.currency-amount {
+  text-align: right;
+}
+
+.currency-addon {
+  width: 6em;
+  text-align: left;
+  position: relative;
+}
+
+.input-group-addon:first-child {
+  border-right: 0;
+  width: 60px !important;
+}
+/* select currency END*/
+
+#container {
+  visibility: hidden;
+}
+
+#loader {
+color: #008cff;
+height: 40px;
+left: 45%;
+position: absolute;
+top: 45%;
+width: 30%;
+}
+.e-btn-group {
+margin: 25px 5px 20px 20px;
 }
