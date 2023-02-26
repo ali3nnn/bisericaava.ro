@@ -16,6 +16,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+      - name: Go to ReactJS directory
+        run: cd reactjs-template
       - name: Install dependencies
         run: ls    
       - name: Generate build
