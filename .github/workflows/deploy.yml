@@ -12,16 +12,24 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v2
+
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - name: Go to ReactJS directory
-        run: cd reactjs-template
+
       - name: Install dependencies
-        run: ls    
+        run: |
+        cd reactjs-template
+        npm ci
+            
+
       - name: Generate build
-        run: npm run build
+        run: |
+        cd reactjs-template
+        npm run build
+        
+
       # Share artifact inside workflow
       - name: Share artifact inside workflow
         uses: actions/upload-artifact@v1
