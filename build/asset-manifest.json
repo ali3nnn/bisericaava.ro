@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "../bisericaava.ro/build/static/css/main.ae42ac5f.css",
-    "main.js": "../bisericaava.ro/build/static/js/main.c3f61213.js",
-    "index.html": "../bisericaava.ro/build/index.html",
-    "main.ae42ac5f.css.map": "../bisericaava.ro/build/static/css/main.ae42ac5f.css.map",
-    "main.c3f61213.js.map": "../bisericaava.ro/build/static/js/main.c3f61213.js.map"
+    "main.css": "../reactjs2/build/static/css/main.ae42ac5f.css",
+    "main.js": "../reactjs2/build/static/js/main.c3f61213.js",
+    "index.html": "../reactjs2/build/index.html",
+    "main.ae42ac5f.css.map": "../reactjs2/build/static/css/main.ae42ac5f.css.map",
+    "main.c3f61213.js.map": "../reactjs2/build/static/js/main.c3f61213.js.map"
   },
   "entrypoints": [
     "static/css/main.ae42ac5f.css",
