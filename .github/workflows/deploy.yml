@@ -20,14 +20,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-        cd reactjs-template
-        npm ci
+          cd reactjs-template
+          npm ci
             
 
       - name: Generate build
         run: |
-        cd reactjs-template
-        npm run build
+          cd reactjs-template
+          npm run build
         
 
       # Share artifact inside workflow
