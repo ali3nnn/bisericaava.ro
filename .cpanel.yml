@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/biserica/public_html/reactjs-template
+    - /bin/cp -fr * $DEPLOYPATH
