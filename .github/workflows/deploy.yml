@@ -22,12 +22,11 @@ jobs:
       - name: LS
         run: ls
 
-    #   - name: Copy build directory via SFTP
-    #     uses: appleboy/sftp-action@master
-    #     with:
-    #       server: your-sftp-server.com
-    #       username: ${{ secrets.SFTP_USERNAME }}
-    #       password: ${{ secrets.SFTP_PASSWORD }}
-    #       port: 22
-    #       local_path: build
-    #       remote_path: /path/to/public_html
+      - name: Copy build directory via FTP
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+            server: ftp.bisericaava.ro
+            username: ${{ secrets.FTP_USERNAME }}
+            password: ${{ secrets.FTP_PASSWORD }}
+            server_dir: /
+            local_dir: build
