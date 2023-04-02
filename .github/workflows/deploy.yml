@@ -23,10 +23,11 @@ jobs:
         run: ls
 
       - name: Copy build directory via FTP
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
             server: ftp.bisericaava.ro
             username: ${{ secrets.FTP_USERNAME }}
             password: ${{ secrets.FTP_PASSWORD }}
-            server_dir: /
+            port: 21
+            server-dir: /
             local_dir: build
