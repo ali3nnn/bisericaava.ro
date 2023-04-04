@@ -3,31 +3,40 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: npm install
+    - name: Setup Node.js
+      uses: actions/setup-node@v2.4.4
+      with:
+        node-version: '19.x'
 
-      - name: Build the app
-        run: npm run build
+    - name: Install dependencies
+      run: npm install
 
-      - name: LS
-        run: ls
+    - name: Build the app
+      run: npm run build
+      if: success()
 
-      - name: Copy build directory via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-            server: ftp.bisericaava.ro
-            username: ${{ secrets.FTP_USERNAME }}
-            password: ${{ secrets.FTP_PASSWORD }}
-            port: 21
-            server-dir: public_html/
-            local_dir: build
+    - name: Save build artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: build
+        path: build/
+
+    - name: Copy build directory via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ftp.bisericaava.ro
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        port: 21
+        server-dir: public_html/
+        artifact: build
