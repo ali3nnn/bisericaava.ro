@@ -65,36 +65,36 @@
       "smallImage": "img/portfolio/09-small.jpg"
     }
   ],
-  "Services": [
+  "Departments": [
     {
-      "icon": "fa fa-wordpress",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "image": "https://bisericaava.ro/wp-content/uploads/2024/05/Screenshot-2023-12-11-121441.png",
+      "name": "Binefaceri",
+      "text-disabled": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
     },
     {
-      "icon": "fa fa-cart-arrow-down",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "image": "https://bisericaava.ro/wp-content/uploads/2024/05/pt-0719-exploring-1.jpg",
+      "name": "AVA Kids",
+      "text-disabled": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
     },
     {
-      "icon": "fa fa-cloud-download",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "image": "https://bisericaava.ro/wp-content/uploads/2024/05/Screenshot-2023-12-11-121425.png",
+      "name": "VIVERE",
+      "text-disabled": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
     },
     {
-      "icon": "fa fa-language",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "image": "https://bisericaava.ro/wp-content/uploads/2024/03/psiholog-bun-bucuresti-psihoterapie-individuala-MindWay-1.jpg",
+      "name": "Consiliere",
+      "text-disabled": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
     },
     {
-      "icon": "fa fa-plane",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "image": "https://bisericaava.ro/wp-content/uploads/2024/05/Screenshot-2023-12-11-121407-1024x767-1.png",
+      "name": "Grupe de casa",
+      "text-disabled": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
     },
     {
-      "icon": "fa fa-pie-chart",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "image": "https://ministry127.com/sites/default/files/styles/wide/public/images/article_images/preaching-bible-stories-effectively110513.jpg?itok=Zh-d1XAG",
+      "name": "Predicarea",
+      "text-disabled": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
     }
   ],
   "Testimonials": [
@@ -152,12 +152,20 @@
     }
   ],
   "Contact": {
-    "address": "4321 California St, San Francisco, CA 12345 ",
-    "phone": "+1 123 456 1234",
-    "email": "info@company.com",
-    "facebook": "fb.com",
-    "twitter": "twitter.com",
-    "youtube": "youtube.com"
+    "address": "Str. Tudor Vladimirescu 24",
+    "gmaps": "https://g.co/kgs/iVRLaR8",
+    "phone": "+40 785 541 595",
+    "email": "avachurch19@gmail.com",
+    "facebook": "https://www.facebook.com/BisericaAva",
+    "youtube": "https://www.youtube.com/@bisericaava",
+    "donations": {
+      "eur":"RO73BTRLUSDCRT0612468901",
+      "usd":"RO73BTRLUSDCRT0612468901",
+      "ron":"RO22BTRLRONCRT0612468901",
+      "name": "Asociatia Ava Targoviste",
+      "bank": "Banca Transilvania",
+      "swift": "BTRLRO22XXX"
+    }
   },
   "Features": [
     {

@@ -1,115 +1,27 @@
-import { useState } from "react";
-import emailjs from "emailjs-com";
 import React from "react";
 
-const initialState = {
-  name: "",
-  email: "",
-  message: "",
-};
 export const Contact = (props) => {
-  const [{ name, email, message }, setState] = useState(initialState);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setState((prevState) => ({ ...prevState, [name]: value }));
-  };
-  const clearState = () => setState({ ...initialState });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(name, email, message);
-    emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_USER_ID")
-      .then(
-        (result) => {
-          console.log(result.text);
-          clearState();
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
   return (
     <div>
       <div id="contact">
         <div className="container">
-          <div className="col-md-8">
-            <div className="row">
-              <div className="section-title">
-                <h2>Get In Touch</h2>
-                <p>
-                  Please fill out the form below to send us an email and we will
-                  get back to you as soon as possible.
-                </p>
-              </div>
-              <form name="sentMessage" validate onSubmit={handleSubmit}>
-                <div className="row">
-                  <div className="col-md-6">
-                    <div className="form-group">
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        className="form-control"
-                        placeholder="Name"
-                        required
-                        onChange={handleChange}
-                      />
-                      <p className="help-block text-danger"></p>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="form-group">
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        className="form-control"
-                        placeholder="Email"
-                        required
-                        onChange={handleChange}
-                      />
-                      <p className="help-block text-danger"></p>
-                    </div>
-                  </div>
-                </div>
-                <div className="form-group">
-                  <textarea
-                    name="message"
-                    id="message"
-                    className="form-control"
-                    rows="4"
-                    placeholder="Message"
-                    required
-                    onChange={handleChange}
-                  ></textarea>
-                  <p className="help-block text-danger"></p>
-                </div>
-                <div id="success"></div>
-                <button type="submit" className="btn btn-custom btn-lg">
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </div>
-          <div className="col-md-3 col-md-offset-1 contact-info">
+          <div className="col-md-4 contact-info">
             <div className="contact-item">
-              <h3>Contact Info</h3>
+              <h3>Contactează-ne</h3>
               <p>
                 <span>
-                  <i className="fa fa-map-marker"></i> Address
+                  <i className="fa fa-map-marker"></i> Adresa
                 </span>
-                {props.data ? props.data.address : "loading"}
+                {props?.data?.gmaps && props?.data?.address ? <a href={props.data.gmaps} class="footerLink">Targoviste, {props.data.address}</a> : "loading"}
               </p>
             </div>
             <div className="contact-item">
               <p>
                 <span>
-                  <i className="fa fa-phone"></i> Phone
+                  <i className="fa fa-phone"></i> Telefon
                 </span>{" "}
-                {props.data ? props.data.phone : "loading"}
+                {props?.data?.phone ? <a href={props.data.phone} class="footerLink">{props.data.phone}</a> : "loading"}
               </p>
             </div>
             <div className="contact-item">
@@ -117,9 +29,23 @@ export const Contact = (props) => {
                 <span>
                   <i className="fa fa-envelope-o"></i> Email
                 </span>{" "}
-                {props.data ? props.data.email : "loading"}
+                {props?.data?.email ? <a href={props.data.email} class="footerLink">{props.data.email}</a> : "loading"}
               </p>
             </div>
+          </div>
+          <div className="col-md-4">
+            <h3>Program</h3>
+            <p>Miercuri de la 19:00</p>
+            <p>Duminica de la 10:00</p>
+          </div>
+          <div className="col-md-4">
+            <h3>Donează</h3>
+            <p>{props?.data?.donations?.name}</p>
+            <p>RON: {props?.data?.donations?.ron}</p>
+            <p>EUR: {props?.data?.donations?.eur}</p>
+            <p>USD {props?.data?.donations?.usd}</p>
+            <p>{props?.data?.donations?.bank}</p>
+            <p>{props?.data?.donations?.swift}</p>
           </div>
           <div className="col-md-12">
             <div className="row">
@@ -128,11 +54,6 @@ export const Contact = (props) => {
                   <li>
                     <a href={props.data ? props.data.facebook : "/"}>
                       <i className="fa fa-facebook"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={props.data ? props.data.twitter : "/"}>
-                      <i className="fa fa-twitter"></i>
                     </a>
                   </li>
                   <li>
@@ -149,10 +70,7 @@ export const Contact = (props) => {
       <div id="footer">
         <div className="container text-center">
           <p>
-            &copy; 2023 Issaaf Kattan React Land Page Template. Design by{" "}
-            <a href="http://www.templatewire.com" rel="nofollow">
-              TemplateWire
-            </a>
+            &copy; {(new Date()).getYear() + 1900} / All rights reversed. Biserica AVA.
           </p>
         </div>
       </div>

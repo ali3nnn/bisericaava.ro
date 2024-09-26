@@ -1,3 +1,5 @@
+@import './constants.css';
+
 @media screen and (max-width: 400px) {
   #features {
     padding: 20px;
@@ -15,4 +17,8 @@
   #portfolio {
     width: 110%;
   }
+}
+
+.footerLink, .footerLink:hover, .footerLink:active {
+  color: var(--highlight-color);
 }

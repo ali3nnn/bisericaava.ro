@@ -1,0 +1,31 @@
+:root {
+    --font-primary: "Open Sans", sans-serif;
+    --font-secondary: "Raleway", sans-serif;
+    --font-tertiary: "Lato", sans-serif;
+    --font-color: #777;
+    --heading-color: #333;
+    --navigation-items-color: rgba(255, 255, 255, 0.75);
+    --link-color: #608dfd;
+    --header-background: black;
+    /* --primary-bg-color: #5ca9fb; */
+    --primary-bg-color: black;
+    /* --seconday-bg-color: #6372ff; */
+    --seconday-bg-color: var(--font-color);
+    /* --gradient-main-color: #6372ff; */
+    --gradient-main-color: black;
+    /* --gradient-secondary-color: #5ca9fb; */
+    --gradient-secondary-color: black;
+    --gradient-sepparator: 50%;
+    --gradient-sepparator-reversed: 120%;
+    --primary-gradient: linear-gradient(to right, var(--gradient-secondary-color) 0%, var(--gradient-main-color) var(--gradient-sepparator));
+    --secondary-gradient: linear-gradient(to right, var(--gradient-main-color) 0%, var(--gradient-secondary-color) var(--gradient-sepparator-reversed));
+    --footer-gradient: linear-gradient(to top, black 20%, #444 53%, #666 66%, #888 74%, #bbb 86%, #ddd 92%, #eee 95%, white 100%);
+    --footer-background: black;
+    --navbar-shadow-color: rgba(0, 0, 0, 0.15);  /* TODO: to add them in the styling */
+    --section-bg-color: #f6f6f6; /* TODO: to add them in the styling */
+    --highlight-color: rgba(255, 255, 255, 0.75); /* TODO: to add them in the styling */
+    --highlight-hover: #fff; /* TODO: to add them in the styling */
+    --highlight-border: rgba(255, 255, 255, 0.3); /* TODO: to add them in the styling */
+    --btn-border-radius: 25px; /* TODO: to add them in the styling */
+    --btn-padding: 14px 34px; /* TODO: to add them in the styling */
+}

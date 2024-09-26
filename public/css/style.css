@@ -1,9 +1,12 @@
+/* @import './constants.css'; */
+@import '../../src/constants.css';
+
 body,
 html {
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--font-primary);
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
-  color: #777;
+  color: var(--heading-color);
   font-weight: 400;
   width: 100% !important;
   height: 100% !important;
@@ -11,23 +14,23 @@ html {
 h2,
 h3,
 h4 {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-secondary);
 }
 h2 {
   text-transform: uppercase;
   margin: 0 0 20px;
   font-weight: 800;
   font-size: 36px;
-  color: #333;
+  color: var(---heading-color);
 }
 h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #333;
+  color: var(---heading-color);
 }
 h4 {
   font-size: 18px;
-  color: #333;
+  color: var(---heading-color);
   font-weight: 600;
 }
 h5 {
@@ -43,13 +46,13 @@ p.intro {
   line-height: 24px;
 }
 a {
-  color: #608dfd;
+  color: var(--link-color);
   font-weight: 400;
 }
 a:hover,
 a:focus {
   text-decoration: none;
-  color: #608dfd;
+  color: var(--link-color);
 }
 ul,
 ol {
@@ -75,22 +78,28 @@ hr {
   padding: 15px;
   transition: all 0.8s;
 }
+#menu h1, #menu p {
+  color: var(---heading-color)
+}
 #menu.navbar-default {
-  background-color: #fff;
+  background-color: var(--header-background);
   border-color: rgba(231, 231, 231, 0);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 #menu a.navbar-brand {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-secondary);
   font-size: 24px;
-  font-weight: 700;
-  color: #333;
+  font-weight: 900;
+  color: var(--navigation-items-color);
   text-transform: uppercase;
 }
+#menu a.navbar-brand span{
+  font-weight:100;
+}
 #menu.navbar-default .navbar-nav > li > a {
-  font-family: "Lato", sans-serif;
+  font-family: var(--font-tertiary);
   text-transform: uppercase;
-  color: #555;
+  color: var(--navigation-items-color);
   font-size: 15px;
   font-weight: 400;
   padding: 8px 2px;
@@ -104,7 +113,7 @@ hr {
   bottom: -1px;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
+  background: var(--secondary-gradient);
   content: "";
   transition: width 0.2s;
 }
@@ -125,7 +134,7 @@ hr {
   bottom: -1px !important;
   width: 100% !important;
   height: 2px !important;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%) !important;
+  background: var(--secondary-gradient) !important;
   content: "" !important;
   transition: width 0.2s !important;
 }
@@ -152,7 +161,7 @@ hr {
 .section-title h2::after {
   position: absolute;
   content: "";
-  background: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  background: var(--primary-gradient);
   height: 4px;
   width: 60px;
   bottom: 0;
@@ -163,11 +172,11 @@ hr {
   font-size: 18px;
 }
 .btn-custom {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-secondary);
   text-transform: uppercase;
   color: #fff;
-  background-color: #5ca9fb;
-  background-image: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  background-color: var(--primary-bg-color);
+  background-image: var(--primary-gradient);
   padding: 14px 34px;
   letter-spacing: 1px;
   margin: 0;
@@ -184,7 +193,7 @@ hr {
 .btn-custom.active {
   color: #fff;
   background-image: none;
-  background-color: #6372ff;
+  background-color: var(--seconday-bg-color);
 }
 .btn:active,
 .btn.active {
@@ -208,18 +217,20 @@ a:focus,
   display: table;
   width: 100%;
   padding: 0;
-  background: url(../img/intro-bg.jpg) center center no-repeat;
+  background: url(https://bisericaava.ro/wp-content/uploads/2024/05/inchinare.jpg) center center no-repeat;
   background-color: #e5e5e5;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  height: 100%;
 }
 .intro .overlay {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.7);
+  height: 100%;
 }
 .intro h1 {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-secondary);
   color: #fff;
   font-size: 82px;
   font-weight: 700;
@@ -229,7 +240,7 @@ a:focus,
 }
 .intro h1 span {
   font-weight: 800;
-  color: #5ca9fb;
+  color: var(--primary-bg-color);
 }
 .intro p {
   color: #fff;
@@ -257,7 +268,7 @@ header .intro-text {
   height: 100px;
   padding: 30px 0;
   border-radius: 50%;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
+  background: var(--secondary-gradient);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
 }
 /* About Section */
@@ -276,7 +287,7 @@ header .intro-text {
 #about h2::after {
   position: absolute;
   content: "";
-  background: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  background: var(--primary-gradient);
   height: 4px;
   width: 60px;
   bottom: 0;
@@ -291,7 +302,7 @@ header .intro-text {
 #about .about-text li:before {
   content: "\f00c";
   font-family: "FontAwesome";
-  color: #5ca9fb;
+  color: var(--primary-bg-color);
   font-size: 11px;
   font-weight: 300;
   padding-right: 8px;
@@ -310,15 +321,14 @@ header .intro-text {
 /* Services Section */
 #services {
   padding: 100px 0;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
+  background: var(--secondary-gradient);
   color: #fff;
 }
-#services .service-desc {
-  margin: 10px 10px 20px;
-}
-#services h2 {
+
+#services .section-title h2 {
   color: #fff;
 }
+
 #services .section-title h2::after {
   position: absolute;
   content: "";
@@ -329,27 +339,64 @@ header .intro-text {
   margin-left: -30px;
   left: 50%;
 }
-#services i.fa {
-  font-size: 42px;
-  width: 120px;
-  height: 120px;
-  padding: 40px 0;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
-  border-radius: 50%;
+
+#services .service-card {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Adjust height as needed */
+  margin: 10px 10px 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease; /* Smooth transition */
 }
-#services h3 {
-  font-weight: 500;
-  padding: 5px 0;
-  color: #fff;
+
+#services .service-card:hover {
+  transform: scale(1.05); /* Scale up the card on hover */
+  cursor: pointer;
 }
-#services p {
-  color: rgba(255, 255, 255, 0.75);
+
+#services .service-card.no-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* Ensure the card maintains the desired height */
+  text-align: center; /* Center text alignment */
 }
-#services .service-desc {
-  margin-bottom: 40px;
+
+#services .service-card.no-text h3 {
+  font-size: 50px;
 }
+
+#services .service-card.no-text .service-desc {
+  font-size: 24px; /* Adjust the font size as needed */
+  font-weight: bold; /* Make the font bold */
+  color: #fff; /* Set the color for visibility */
+}
+
+#services .service-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black tint with 50% opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease; /* Optional transition for overlay */
+}
+
+#services .service-card:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* Darken overlay on hover */
+}
+
 /* Portfolio Section */
 #portfolio {
   padding: 100px 0;
@@ -460,7 +507,7 @@ header .intro-text {
 /* Contact Section */
 #contact {
   padding: 100px 0 60px;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
+  background: var(--footer-gradient);
   color: rgba(255, 255, 255, 0.75);
 }
 #contact .section-title {
@@ -510,7 +557,7 @@ header .intro-text {
 label {
   font-size: 12px;
   font-weight: 400;
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--font-primary);
   float: left;
 }
 #contact .form-control {
@@ -537,16 +584,16 @@ label {
   box-shadow: transparent;
 }
 .form-control::-webkit-input-placeholder {
-  color: #777;
+  color: var(--heading-color);
 }
 .form-control:-moz-placeholder {
-  color: #777;
+  color: var(--heading-color);
 }
 .form-control::-moz-placeholder {
-  color: #777;
+  color: var(--heading-color);
 }
 .form-control:-ms-input-placeholder {
-  color: #777;
+  color: var(--heading-color);
 }
 #contact .contact-item {
   margin: 20px 0;
@@ -580,12 +627,12 @@ label {
   transition: all 0.3s;
 }
 #contact .social i.fa:hover {
-  color: #608dfd;
+  color: var(--link-color);
   background: #fff;
 }
 /* Footer Section*/
 #footer {
-  background: #f6f6f6;
+  background: var(--footer-background);
   padding: 30px 0;
 }
 #footer p {
@@ -593,7 +640,7 @@ label {
   font-size: 14px;
 }
 #footer a {
-  color: #608dfd;
+  color: var(--link-color);
 }
 #footer a:hover {
   border-bottom: 2px solid #608dfd;
@@ -603,4 +650,55 @@ label {
   #about img {
     margin: 50px 0;
   }
+}
+/* Maps */
+#maps {
+  padding: 100px 0;
+}
+
+.map-section {
+  height: 100%;
+}
+
+.map-section iframe {
+  width: 100%;
+  height: 100%;
+}
+
+#maps .container {
+  /* width: 100%; */
+  display: flex;
+  background-color: black; /* Black background */
+  color: white; /* White text for contrast */
+  height: 500px; /* Adjust height as needed */
+  align-items: center; /* Center vertically */
+  border-radius: 13px;
+  padding-left: 0px;
+  padding-right: 0px;
+  overflow:hidden;
+}
+
+.text-section {
+  flex: 0 0 40%; /* 40% width for text section */
+  /* padding: 20px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center text vertically */
+  padding: 20px;
+}
+
+.map-section {
+  flex: 0 0 60%; /* 60% width for map section */
+  /* padding: 20px; */
+  display: flex;
+  justify-content: center; /* Center the map */
+  align-items: center; /* Center the map */
+}
+
+h2 {
+  margin-bottom: 20px; /* Space below heading */
+}
+
+p {
+  margin-bottom: 10px; /* Space below paragraph */
 }
