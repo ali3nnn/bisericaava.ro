@@ -31,7 +31,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT || 21 }}  # Default port is 21, change if necessary
-          local-dir: build                      # Local dist folder to upload
+          local-dir: build/                    # Local dist folder to upload
           # server-dir: ${{ secrets.FTP_REMOTE_DIR }}  # Remote directory on the server
           protocol: ftps                       # Change to `ftp` if you're using plain FTP
           log-level: verbose                   # Log output for debugging purposes
