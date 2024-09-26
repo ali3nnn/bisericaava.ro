@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - master  # Change to your deployment branch if needed
+  workflow_dispatch:  # Allows for manual triggering of the workflow
+    inputs:
+      dir:  # Define the input variable
+        description: 'Directory to display'
+        required: true  # Make it a required input
+        default: 'default-directory'  # Optional default value
 
 jobs:
   deploy:
@@ -34,4 +40,35 @@ jobs:
           local-dir: build/                    # Local dist folder to upload
           server-dir: dev.bisericaava.ro/  # Remote directory on the server
           protocol: ftps                       # Change to `ftp` if you're using plain FTP
-          log-level: verbose                   # Log output for debugging purposes
+          # log-level: verbose                   # Log output for debugging purposes
+  
+  manualDeployment:
+    name: Manual Deployment
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' }}  # Run this job only when triggered manually
+
+    steps:
+      # Checkout the latest code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Install dependencies
+      - name: Install Dependencies
+        run: npm ci
+
+      # Build the project
+      - name: Build Project
+        run: npm run build
+
+      # Deploy the build folder via FTP
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT || 21 }}  # Default port is 21, change if necessary
+          local-dir: build/                    # Local build folder to upload
+          server-dir: ${{ github.event.inputs.dir }}  # Use the manual input for server directory
+          protocol: ftps                       # Change to `ftp` if you're using plain FTP
+          # log-level: verbose                   # Log output for debugging purposes
