@@ -1,42 +1,37 @@
-name: Build and Deploy
+name: Deploy to cPanel via FTP
 
 on:
   push:
     branches:
-      - master
+      - master  # Change to your deployment branch if needed
 
 jobs:
-  build_and_deploy:
+  deploy:
+    name: Deploy to FTP
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      # Checkout the latest code
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2.4.4
-      with:
-        node-version: '19.x'
+      # Install dependencies (if needed, e.g., for a Node.js project)
+      - name: Install Dependencies
+        run: npm install
 
-    - name: Install dependencies
-      run: npm install
+      # Build the project (if needed, e.g., for a front-end framework like Vue or React)
+      - name: Build Project
+        run: npm run build
 
-    - name: Build the app
-      run: npm run build
-      if: success()
-
-    - name: Save build artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: build
-        path: build/
-
-    - name: Copy build directory via FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      with:
-        server: ftp.bisericaava.ro
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        port: 21
-        server-dir: public_html/
-        artifact: build
+      # Deploy the dist folder via FTP
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT || 21 }}  # Default port is 21, change if necessary
+          local-dir: build                      # Local dist folder to upload
+          server-dir: ${{ secrets.FTP_REMOTE_DIR }}  # Remote directory on the server
+          protocol: ftps                       # Change to `ftp` if you're using plain FTP
+          log-level: verbose                   # Log output for debugging purposes

@@ -1,5 +1,5 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/biserica/public_html/testing-cpanel
-    - /bin/cp -R build $DEPLOYPATH
+# ---
+# deployment:
+#   tasks:
+#     - export DEPLOYPATH=/home/biserica/public_html/testing-cpanel
+#     - /bin/cp -R build $DEPLOYPATH
