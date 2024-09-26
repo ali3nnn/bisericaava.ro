@@ -6,10 +6,10 @@ on:
       - master  # Change to your deployment branch if needed
   workflow_dispatch:  # Allows for manual triggering of the workflow
     inputs:
-      dir:  # Define the input variable
-        description: 'Directory to display'
-        required: true  # Make it a required input
-        default: 'default-directory'  # Optional default value
+      dir:  
+        description: 'Where to store the build'
+        required: true 
+        default: 'dev.bisericaava.ro'  
 
 jobs:
   deploy:
