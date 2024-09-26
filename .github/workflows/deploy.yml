@@ -15,6 +15,7 @@ jobs:
   deploy:
     name: Deploy to dev.bisericaava.ro
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}  # Run this job only when triggered manually
 
     steps:
       # Checkout the latest code
