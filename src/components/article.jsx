@@ -44,12 +44,14 @@ Credem și nădăjduim că Isus Hristos se va reîntoarce pe pământ, că iubir
 const ArticleHeader = ({ title, author, date }) => (
     <header style={styles.header}>
         <h1>{title}</h1>
-        {author ? <p style={styles.meta}>
-            <strong>{author}</strong> | <em>{date}</em>
-        </p> : "" }
+        {author ? (
+            <p style={styles.meta}>
+                <strong>{author}</strong> | <em>{date}</em>
+            </p>
+        ) : null}
     </header>
-);
-
+); 
+  
 // ArticleContent component
 const ArticleContent = ({ content }) => (
     <section style={styles.content}>
