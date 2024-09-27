@@ -13,7 +13,7 @@ export const Contact = (props) => {
                 <span>
                   <i className="fa fa-map-marker"></i> Adresa
                 </span>
-                {props?.data?.gmaps && props?.data?.address ? <a href={props.data.gmaps} class="footerLink">Targoviste, {props.data.address}</a> : "loading"}
+                {props?.data?.gmaps && props?.data?.address ? <a href={props.data.gmaps} className="footerLink">Targoviste, {props.data.address}</a> : "loading"}
               </p>
             </div>
             <div className="contact-item">
@@ -21,7 +21,7 @@ export const Contact = (props) => {
                 <span>
                   <i className="fa fa-phone"></i> Telefon
                 </span>{" "}
-                {props?.data?.phone ? <a href={props.data.phone} class="footerLink">{props.data.phone}</a> : "loading"}
+                {props?.data?.phone ? <a href={props.data.phone} className="footerLink">{props.data.phone}</a> : "loading"}
               </p>
             </div>
             <div className="contact-item">
@@ -29,7 +29,7 @@ export const Contact = (props) => {
                 <span>
                   <i className="fa fa-envelope-o"></i> Email
                 </span>{" "}
-                {props?.data?.email ? <a href={props.data.email} class="footerLink">{props.data.email}</a> : "loading"}
+                {props?.data?.email ? <a href={props.data.email} className="footerLink">{props.data.email}</a> : "loading"}
               </p>
             </div>
           </div>
@@ -43,7 +43,7 @@ export const Contact = (props) => {
             <p>{props?.data?.donations?.name}</p>
             <p>RON: {props?.data?.donations?.ron}</p>
             <p>EUR: {props?.data?.donations?.eur}</p>
-            <p>USD {props?.data?.donations?.usd}</p>
+            <p>USD: {props?.data?.donations?.usd}</p>
             <p>{props?.data?.donations?.bank}</p>
             <p>{props?.data?.donations?.swift}</p>
           </div>
