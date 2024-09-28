@@ -1,6 +1,9 @@
 @import './constants.css';
 /* @import '../../src/constants.css'; */
 
+/* Departments */
+@import './departments.css';
+
 body,
 html {
   font-family: var(--font-primary);
@@ -241,7 +244,8 @@ button {
   margin: 9px 20px 0;
 }
 
-#menu.navbar-default .navbar-nav>li>a:hover {
+#menu.navbar-default .navbar-nav>li>a:hover,
+#menu.navbar-default .navbar-nav>li>a.page-active {
   color: var(--navigation-items-color-hover);
 }
 
@@ -257,7 +261,8 @@ button {
   transition: width 0.2s;
 }
 
-#menu.navbar-default .navbar-nav>li>a:hover:after {
+#menu.navbar-default .navbar-nav>li>a:hover:after,
+#menu.navbar-default .navbar-nav>li>a.page-active:after {
   width: 100% !important;
   background: var(--navbar-items-underline-color-hover) !important;
 }

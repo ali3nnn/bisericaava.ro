@@ -6,7 +6,11 @@ import { About } from "./components/about";
 import { Departments } from "./components/departments";
 import { Gallery } from "./components/gallery";
 import { Contact } from "./components/contact";
-import { PageTemplate } from "./components/page-template";
+import { PageTemplate } from "./pages/page-template";
+import { ScrollToTop } from "./pages/scroll-to-top";
+import { ArticlePage } from "./pages/article";
+import { PageHeader } from "./pages/page-header";
+import { DepartmentsPage } from "./pages/departmentsPage";
 import Maps from "./components/maps";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
@@ -26,6 +30,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <Navigation />
       <Routes>
         {/* Home page: Show all components */}
@@ -42,12 +47,24 @@ const App = () => {
           }
         />
 
-        {/* Individual routes for each component */}
+        {/* Despre noi */}
         <Route
           path="/despre-noi"
-          element={<PageTemplate data={{
-              "title": "Despre noi",
-          }} />}
+          element={<PageTemplate 
+            components={[
+              {component: PageHeader, props: { "title": "Despre noi" }},
+              {component: ArticlePage, props: {...landingPageData?.About?.aboutPage}}
+            ]}
+           />}
+        />
+
+        {/* Departamente */}
+        <Route
+          path="/departamente"
+          element={<PageTemplate components={[
+            {component: PageHeader, props: { "title": "Departamente" }},
+            {component: DepartmentsPage, props: {...landingPageData?.Departments}}
+          ]} />}
         />
       </Routes>
       <Contact data={landingPageData.Contact} />

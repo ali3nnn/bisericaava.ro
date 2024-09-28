@@ -5,18 +5,12 @@
   },
   "About": {
     "paragraph": "La Biserica AVA, toți oamenii sunt bineveniți să exploreze, să frecventeze și să ia decizia umblării în credința în Domnul Isus Hristos. Recunoaștem că îndoieli și întrebări legate de credință pot apărea pe cale, dar acestea sunt parte normală a procesului de formare spirituală. Nu pretindem că avem toate răspunsurile, dar susținem că toate răspunsurile pot fi găsite în Isus Hristos.",
-    "Why": [
-      "Lorem ipsum dolor",
-      "Tempor incididunt",
-      "Lorem ipsum dolor",
-      "Incididunt ut labore"
-    ],
-    "Why2": [
-      "Aliquip ex ea commodo",
-      "Lorem ipsum dolor",
-      "Exercitation ullamco",
-      "Lorem ipsum dolor"
-    ]
+    "aboutPage": {
+      "title": "Apartenență și crez",
+      "author": "",
+      "date": "September 20, 2024",
+      "content": "Biserica Ava este parte a Cultului Creștin Baptist din România.\n\nBaptiști reprezintă în tradiția creștină o ramură a Reformei Protestante din Europa, din secolele XV-XVI. Prima Biserică Baptistă a luat ființă în anul 1609 în Amsterdam (Olanda). Numele le-a fost impus, inițial ca o poreclă, și făcea referire la practica botezului la o vârstă matură. Prețul plătit de primii creștini baptiști a fost unul greu, mulți fiind uciși, întemnițați sau alungați din comunitatea lor. În prezent, religia baptistă constituie una din cele mai răspândite confesiuni creștine protestante din lume, având biserici în peste 200 țări și un număr de peste 120.000 de membrii.\n\nÎn practică religioasă, creștinii baptiști se remarcă prin reîntoarcerea la ceea ce înțeleg prin „simplitatea bisericii din veacul apostolic” și prin importanța pe care o oferă Bibliei în doctrină, închinare și viața de zi cu zi.\n\nEi afirmă principiile Reformei:\n\"Sola Scriptura - Numai Scriptura\"\n\"Sola Fidae - Numai Credința\"\n\"Sola Gratia - Numai Harul\"\n\"Soli Deo Gloria - Numai lui Dumnezeu i se cuvine slava\"\n\nCredem că există un Singur Dumnezeu, viu, adevărat și sfânt, existând etern în Sfânta Treime: Tatăl, Fiul și Duhul Sfânt.\n\nCredem că pământul și viața există pentru că Dumnezeu le-a creat, îi aparțin în întregime și de aceea trebuie să le prețuim și să le îngrijim.\n\nCredem că toate ființele umane au demnitate pentru că au fost create după chipul și asemănarea lui Dumnezeu, și au valoare dincolo de capacitatea noastră de măsurare, pur și simplu pentru că Dumnezeu și-a pus Chipul în ele.\n\nCredem că această lume are parte de dureri și suferință pentru că ființele umane au căzut în păcat, s-au înstrăinat de Dumnezeu, unii de alții, și de creație.\n\nCredem că Dumnezeu nu va îngădui ca păcatul și suferința să aibă ultimul cuvânt, ci, El lucrează la răscumpărarea și restaurarea Creației Sale, atât a omului, cât și a naturii.\n\nCredem că Dumnezeu s-a exprimat pe Sine, în mod unic, în Fiul Său, Isus Hristos, care a fost conceput în mod miraculos, născut dintr-o fecioară, a trăit o viață de ascultare, a suferit de mâna omului, a murit pe cruce și a înviat a treia zi, de dragul nostru. Isus a fost în întregime om și în întregime Dumnezeu, El este Stăpânul, Învățătorul și Mântuitorul nostru, iar acum domnește veșnic alături de Tatăl Ceresc.\n\nCredem că Mântuirea este în întregime lucrarea harului lui Dumnezeu, primită prin pocăință și credință. Astfel, fiecare persoană poate fi făcută o făptură nouă în Hristos, prin Duhul Sfânt, pentru ca mai apoi, să crească continuu în cunoștința de Dumnezeu și în sfințenie.\n\nCredem că Isus Hristos ne învață o cale demnă de a fi urmată, fiind o mărturie frumoasă în societate și când ne strângem laolaltă. Credem că Duhul Sfânt ne este dat ca să ne apropie de Dumnezeu și să ne transforme după chipul Domnului Isus.\n\nCredem că Biserica este comunitatea prin care Dumnezeu dorește să-și reverse iubirea, vindecarea și să se descopere omenirii, comunitatea care invită pe oricine este gata să-L urmeze pe Isus Hristos, în gândire și fapte.\n\nCredem și nădăjduim că Isus Hristos se va reîntoarce pe pământ, că iubirea și dreptatea vor triumfa la Judecata de Apoi și că Dumnezeu va îndrepta și înnoi toate lucrurile."
+    }
   },
   "Gallery": [
     {
@@ -69,32 +63,38 @@
     {
       "image": "https://bisericaava.ro/wp-content/uploads/2024/05/Screenshot-2023-12-11-121441.png",
       "name": "Binefaceri",
-      "text-disabled": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "text-disabled": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
+      "content": "Binefacerea este esența vieții creștine, un gest de iubire necondiționată față de semeni. În cadrul Bisericii Ava, ne implicăm activ în diverse inițiative caritabile, fie că este vorba de ajutorarea familiilor nevoiașe sau sprijinirea comunităților afectate de dezastre naturale. Credem că prin dăruire și sacrificiu personal, putem schimba destine și aduce lumina lui Hristos în viețile celor aflați în suferință."
     },
     {
       "image": "https://bisericaava.ro/wp-content/uploads/2024/05/pt-0719-exploring-1.jpg",
       "name": "AVA Kids",
-      "text-disabled": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "text-disabled": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
+      "content": "Copiii reprezintă viitorul Bisericii și al comunității noastre. Prin programul AVA Kids, îi ajutăm pe cei mici să descopere valorile creștine prin activități educative și recreative. Fiecare întâlnire este o ocazie de a învăța despre iubirea lui Dumnezeu, despre prietenie și respect, într-un mod interactiv și plin de bucurie."
     },
     {
       "image": "https://bisericaava.ro/wp-content/uploads/2024/05/Screenshot-2023-12-11-121425.png",
       "name": "VIVERE",
-      "text-disabled": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "text-disabled": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
+      "content": "VIVERE este un grup destinat tinerilor care doresc să trăiască o viață autentică în Hristos. Ne întâlnim săptămânal pentru a discuta despre provocările pe care le întâlnim în viața de zi cu zi și cum putem să ne păstrăm credința vie și puternică. VIVERE nu este doar un nume, ci un mod de viață – trăirea Evangheliei în toate aspectele vieții."
     },
     {
       "image": "https://bisericaava.ro/wp-content/uploads/2024/03/psiholog-bun-bucuresti-psihoterapie-individuala-MindWay-1.jpg",
       "name": "Consiliere",
-      "text-disabled": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "text-disabled": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
+      "content": "Într-o lume tot mai complicată, consilierea spirituală oferă alinare și direcție celor care se confruntă cu probleme emoționale sau spirituale. În cadrul Bisericii Ava, consilierii noștri sunt pregătiți să ofere suport și îndrumare în conformitate cu învățăturile biblice, pentru a aduce pace și claritate în momentele de confuzie și durere."
     },
     {
       "image": "https://bisericaava.ro/wp-content/uploads/2024/05/Screenshot-2023-12-11-121407-1024x767-1.png",
       "name": "Grupe de casa",
-      "text-disabled": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "text-disabled": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
+      "content": "Grupele de casă sunt locul în care comunitatea devine familie. Ne întâlnim în cercuri restrânse, în casele membrilor, pentru a ne ruga împreună, a studia Biblia și a împărtăși din experiențele noastre de viață. Aceste întâlniri intime sunt un prilej de a construi relații autentice și de a ne sprijini unii pe alții pe calea credinței."
     },
     {
       "image": "https://ministry127.com/sites/default/files/styles/wide/public/images/article_images/preaching-bible-stories-effectively110513.jpg?itok=Zh-d1XAG",
       "name": "Predicarea",
-      "text-disabled": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "text-disabled": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
+      "content": "Cuvântul lui Dumnezeu este viu și lucrător, iar predicarea în cadrul Bisericii Ava este centrată pe Scriptură, inspirată de Duhul Sfânt și aplicabilă în viața de zi cu zi. Prin mesajele biblice, ne dorim să aducem lumină în inimile celor care ascultă, provocându-i la o viață trăită în ascultare de voia lui Dumnezeu și în conformitate cu învățăturile lui Hristos. Fundamentul predicilor noastre se bazează pe cele 5 Sola ale Reformei: Sola Scriptura – numai Scriptura este autoritatea finală, Sola Fide – doar credința aduce mântuirea, Sola Gratia – mântuirea este un dar al harului, Solus Christus – Hristos este singurul Mijlocitor, și Soli Deo Gloria – toată slava și gloria sunt doar ale lui Dumnezeu. Aceste principii ne ghidează și ne inspiră în fiecare mesaj adus înaintea comunitățiiCuvântul lui Dumnezeu este viu și lucrător, iar predicarea în cadrul Bisericii Ava este centrată pe Scriptură, inspirată de Duhul Sfânt și aplicabilă în viața de zi cu zi. Prin mesajele biblice, ne dorim să aducem lumină în inimile celor care ascultă, provocându-i la o viață trăită în ascultare de voia lui Dumnezeu și în conformitate cu învățăturile lui Hristos. Fundamentul predicilor noastre se bazează pe cele 5 Sola ale Reformei: Sola Scriptura – numai Scriptura este autoritatea finală, Sola Fide – doar credința aduce mântuirea, Sola Gratia – mântuirea este un dar al harului, Solus Christus – Hristos este singurul Mijlocitor, și Soli Deo Gloria – toată slava și gloria sunt doar ale lui Dumnezeu. Aceste principii ne ghidează și ne inspiră în fiecare mesaj adus înaintea comunității."
     }
   ],
   "Testimonials": [
@@ -159,9 +159,9 @@
     "facebook": "https://www.facebook.com/BisericaAva",
     "youtube": "https://www.youtube.com/@bisericaava",
     "donations": {
-      "eur":"RO73BTRLUSDCRT0612468901",
-      "usd":"RO73BTRLUSDCRT0612468901",
-      "ron":"RO22BTRLRONCRT0612468901",
+      "eur": "RO73BTRLUSDCRT0612468901",
+      "usd": "RO73BTRLUSDCRT0612468901",
+      "ron": "RO22BTRLRONCRT0612468901",
       "name": "Asociatia Ava Targoviste",
       "bank": "Banca Transilvania",
       "swift": "BTRLRO22XXX"

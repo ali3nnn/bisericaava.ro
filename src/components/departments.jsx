@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 export const Departments = (props) => {
   return (
@@ -14,25 +15,26 @@ export const Departments = (props) => {
         <div className="row">
           {props.data
             ? props.data.map((d, i) => {
-                // Check if text is empty
-                const cardClass = d.text ? "service-card" : "service-card no-text";
-                
-                return (
+              const cardClass = d.text ? "service-card" : "service-card no-text";
+
+              return (
+                <Link to="/departamente">
                   <div key={`${d.name}-${i}`} className="col-md-4 col-sm-6 col-xs-12">
                     <div
                       className={cardClass}
-                      style={{ backgroundImage: `url(${d.image})` }} // Set background image
+                      style={{ backgroundImage: `url(${d.image})` }} 
                     >
                       <div className="overlay">
                         <div className="service-desc">
                           <h3>{d.name}</h3>
-                          {d.text && <p>{d.text}</p>} {/* Only render text if present */}
+                          {d.text && <p>{d.text}</p>} 
                         </div>
                       </div>
                     </div>
                   </div>
-                );
-              })
+                </Link>
+              );
+            })
             : "loading"}
         </div>
       </div>

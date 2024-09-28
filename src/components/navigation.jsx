@@ -1,6 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export const Navigation = (props) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const links = document.querySelectorAll('.navbar-nav a'); // Select all links in the navbar
+
+    // Remove page-active class from all links
+    links.forEach((link) => {
+      link.classList.remove('page-active');
+    });
+
+    // Add page-active class to the link that matches the current URL
+    links.forEach((link) => {
+      const linkHref = link.getAttribute('href').replace('/#', ''); // Remove '/#' for matching
+      const currentPath = location.pathname; // Get current hash without the '#'
+      
+      if (linkHref === currentPath) {
+        link.classList.add('page-active');
+      }
+    });
+  }, [location]); // Re-run every time the URL changes
+
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
@@ -28,12 +50,12 @@ export const Navigation = (props) => {
         >
           <ul className="nav navbar-nav navbar-right">
             <li>
-              <a href="#about" className="page-scroll">
+              <a href="/#/despre-noi" className="page-scroll">
                 Despre noi
               </a>
             </li>
             <li>
-              <a href="#services" className="page-scroll">
+              <a href="/#/departamente" className="page-scroll">
                 Departamente
               </a>
             </li>
@@ -42,16 +64,6 @@ export const Navigation = (props) => {
                 Galerie
               </a>
             </li>
-            {/* <li>
-              <a href="#testimonials" className="page-scroll">
-                Testimonials
-              </a>
-            </li> */}
-            {/* <li>
-              <a href="#team" className="page-scroll">
-                Team
-              </a>
-            </li> */}
             <li>
               <a href="#maps" className="page-scroll">
                 HARTA

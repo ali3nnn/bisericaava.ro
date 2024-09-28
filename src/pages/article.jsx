@@ -2,7 +2,7 @@ import React from 'react';
 
 // Sample article data
 const article = {
-    title: "Apartență și crez",
+    title: "Apartenență și crez",
     author: "",
     date: "September 20, 2024",
     content: `
@@ -22,7 +22,7 @@ Credem că există un Singur Dumnezeu, viu, adevărat și sfânt, existând eter
 
 Credem că pământul și viața există pentru că Dumnezeu le-a creat, îi aparțin în întregime și de aceea trebuie să le prețuim și să le îngrijim.  
 
-Credem că toate ființele umane au demnitate pentru că au fost create după chipul și asemănarea lui Dumnezeu, și au valoare dincolo de capacitatea noastră de măsurare, pur și simplu pentru că Dumnezeu și-a pus Chipul în ele.  
+Credem că toate ființele umane au demnitate pentru că au fost create după chipul și asemănarea lui Dumnezeu, și au valoare dincolo de capacitatea noastră de măsurare, pur și simplu pentru că Dumnezeu și-a pus Chipul în ele. 
 
 Credem că această lume are parte de dureri și suferință pentru că ființele umane au căzut în păcat, s-au înstrăinat de Dumnezeu, unii de alții, și de creație. 
 
@@ -50,8 +50,8 @@ const ArticleHeader = ({ title, author, date }) => (
             </p>
         ) : null}
     </header>
-); 
-  
+);
+
 // ArticleContent component
 const ArticleContent = ({ content }) => (
     <section style={styles.content}>
@@ -62,12 +62,15 @@ const ArticleContent = ({ content }) => (
 );
 
 // Main ArticlePage component
-export const ArticlePage = () => (
-    <div style={styles.page}>
-        <ArticleHeader title={article.title} author={article.author} date={article.date} />
-        <ArticleContent content={article.content} />
-    </div>
-);
+export const ArticlePage = ({ data }) => {
+    console.log(data)
+    return (
+        <div style={styles.page}>
+            <ArticleHeader title={article.title} author={article.author} date={article.date} />
+            <ArticleContent content={article.content} />
+        </div>
+    )
+};
 
 // Styles
 const styles = {
