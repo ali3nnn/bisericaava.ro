@@ -16,7 +16,25 @@
     height: 300px; /* Fixed height for all items */
 }
 
-.department-item:hover {
+.first-item {
+    border: none;
+    box-shadow:none;
+    margin-top:0px;
+    margin-bottom:0px;
+}
+
+.first-item h3 {
+    font-size: 5rem;
+    text-transform:uppercase;
+    /* text-align:center; */
+}
+
+.first-item .department-content {
+    overflow: hidden;
+    width: 100%;
+}
+
+.department-item:not(.first-item):hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
