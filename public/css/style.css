@@ -1,8 +1,8 @@
 @import './constants.css';
 /* @import '../../src/constants.css'; */
 
-/* Departments */
 @import './departments.css';
+@import './gallery.css';
 
 body,
 html {

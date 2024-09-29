@@ -13,9 +13,6 @@ export const DepartmentsPage = ({ data }) => {
                         <h3 className="department-name">Folosește-ți Darurile pentru Gloria lui Dumnezeu</h3>
                         <p className="department-description">Apostolul Pavel ne vorbește despre biserică în termenii unui organism viu. Fiecare membru este un mădular a cărui implicare asigură sănătatea și dezvoltarea întregului trup (Efeseni 4).</p>
                     </div>
-                    {/* <div className="department-image-container">
-                        <img src="https://bisericaava.ro/wp-content/uploads/2024/05/trenduri-in-HR4.png" className="department-image" />
-                    </div> */}
                 </div>
 
                 {Object.keys(data).map((key) => {

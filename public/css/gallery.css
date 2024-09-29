@@ -1,0 +1,11 @@
+.react-photo-gallery--gallery img {
+    transition: all 0.2s ease;
+    transform: scale(1);
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.react-photo-gallery--gallery img:hover {
+    transform: scale(1.5);
+    z-index: 9999;
+}
