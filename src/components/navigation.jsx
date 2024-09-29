@@ -64,11 +64,11 @@ export const Navigation = (props) => {
                 Galerie
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="#maps" className="page-scroll">
                 HARTA
               </a>
-            </li>
+            </li> */}
             <li>
               <a href="#contact" className="page-scroll">
                 Contact
