@@ -1,0 +1,93 @@
+/* Base styles for the important message */
+.important-message {
+    background-color: #ffcc00;
+    text-align: left;
+    padding: 10px;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); */
+    /* border-bottom: 2px solid #e6b800; */
+
+    font-family: var(--font-tertiary);
+    /* text-transform: uppercase; */
+    color: var(--heading-color);
+    font-size: 15px;
+    font-weight: 400;
+    /* padding: 8px 2px; */
+    border-radius: 0;
+    /* margin: 9px 20px 0; */
+}
+
+.message-content {
+    display: flex;
+    /* Use flexbox to position elements */
+    justify-content: space-between;
+    /* Space between elements */
+    align-items: center;
+    /* Center items vertically */
+    max-width: 1200px;
+    /* Max width of the content */
+    margin: 0 auto;
+    /* Center the content */
+}
+
+.message-content p {
+    margin-bottom: 0;
+    margin-right: 30px;
+}
+
+/* Close button styles */
+.close-btn {
+    background: none;
+    /* No background */
+    border: none;
+    /* No border */
+    font-size: 20px;
+    /* Font size for the close button */
+    color: #333;
+    /* Close button color */
+    cursor: pointer;
+    /* Pointer cursor */
+    padding: 0;
+    /* No padding */
+}
+
+/* Close button hover effect */
+.close-btn:hover {
+    color: #000;
+    /* Change color on hover */
+}
+
+/* Responsive Design */
+
+/* On smaller devices (up to 768px) */
+@media (max-width: 768px) {
+    .important-message {
+        padding: 10px;
+        /* Adjust padding */
+        font-size: 14px;
+        /* Adjust font size */
+    }
+
+    .close-btn {
+        font-size: 18px;
+        /* Adjust close button size */
+    }
+}
+
+/* On extra-small devices (up to 576px) */
+@media (max-width: 576px) {
+    .important-message {
+        padding: 8px;
+        /* Adjust padding */
+        font-size: 12px;
+        /* Adjust font size */
+    }
+
+    .close-btn {
+        font-size: 16px;
+        /* Adjust close button size */
+    }
+}

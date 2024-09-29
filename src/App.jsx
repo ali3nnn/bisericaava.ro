@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
+
 import { Navigation } from "./components/navigation";
 import { Header } from "./components/header";
 import { About } from "./components/about";
 import { Departments } from "./components/departments";
 import { Gallery } from "./components/gallery";
 import { Contact } from "./components/contact";
+import { ImportantMessage } from "./components/warning";
+import Maps from "./components/maps";
+
 import { PageTemplate } from "./pages/page-template";
 import { ScrollToTop } from "./pages/scroll-to-top";
 import { ArticlePage } from "./pages/article";
 import { PageHeader } from "./pages/page-header";
 import { DepartmentsPage } from "./pages/departmentsPage";
-import Maps from "./components/maps";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import "./App.css";
@@ -30,6 +33,7 @@ const App = () => {
 
   return (
     <Router>
+      <ImportantMessage />
       <ScrollToTop />
       <Navigation />
       <Routes>
