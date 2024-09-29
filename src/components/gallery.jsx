@@ -75,7 +75,7 @@ export const Gallery = (props) => {
             dapibus leonec.
           </p>
         </div>
-        <GalleryT photos={photos} />;
+        <GalleryT photos={photos} />
       </div>
     </div>
   );

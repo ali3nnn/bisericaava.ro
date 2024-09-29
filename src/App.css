@@ -3,17 +3,19 @@
     padding: 20px;
     width: 111%;
   }
+  #header,
   #about,
   #services,
   #testimonials,
   #team,
   #contact,
+  #maps,
   #footer {
-    width: 111%;
+    width: 100%;
   }
 
   #portfolio {
-    width: 110%;
+    width: 100%;
   }
 }
 

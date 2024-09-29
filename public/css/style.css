@@ -548,7 +548,7 @@ header .intro-text {
   left: 50%;
   display: block;
   position: relative;
-  transform: translate(-50%, -25%)
+  transform: translate(-50%, -50%)
 }
 
 /* Features Section */
