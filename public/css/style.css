@@ -220,6 +220,8 @@ button {
   background-color: var(--header-background);
   border-color: rgba(231, 231, 231, 0);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+  margin-bottom: 0;
 }
 
 #menu a.navbar-brand {
@@ -491,10 +493,12 @@ a:focus,
 
 #page-header .intro {
   height: 50%;
+  min-height: 320px;
 }
 
-#page-header .intro-text {
-  top: 25vh;
+#page-header .container {
+  top: 50%;
+  position: relative;
 }
 
 /* Header Section */
@@ -508,7 +512,7 @@ a:focus,
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  height: 100%;
+  height: calc(100% - 81px);
 }
 
 .intro .overlay {
@@ -540,11 +544,16 @@ a:focus,
   margin-bottom: 60px;
 }
 
+header .container {
+  top: 50%;
+  position: relative;
+}
+
 header .intro-text {
   /* padding-top: 350px; */
   /* padding-bottom: 200px; */
   text-align: center;
-  top: 50vh;
+  /* top: 50vh; */
   left: 50%;
   display: block;
   position: relative;
