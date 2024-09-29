@@ -12,32 +12,27 @@ export const Departments = (props) => {
             dapibus leonec.
           </p>
         </div>
-        <div className="row">
+        <div className="card-grid">
           {props.data
             ? props.data.map((d, i) => {
-              const cardClass = d.text ? "service-card" : "service-card no-text";
-
-              return (
-                <Link to="/departamente">
-                  <div key={`${d.name}-${i}`} className="col-md-4 col-sm-6 col-xs-12">
-                    <div
-                      className={cardClass}
-                      style={{ backgroundImage: `url(${d.image})` }} 
-                    >
+                const cardClass = d.text ? "service-card" : "service-card no-text";
+                return (
+                  <Link to="/departamente" key={`${d.name}-${i}`}>
+                    <div className={cardClass} style={{ backgroundImage: `url(${d.image})` }}>
                       <div className="overlay">
                         <div className="service-desc">
                           <h3>{d.name}</h3>
-                          {d.text && <p>{d.text}</p>} 
+                          {d.text && <p>{d.text}</p>}
                         </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              );
-            })
+                  </Link>
+                );
+              })
             : "loading"}
         </div>
       </div>
     </div>
   );
 };
+
