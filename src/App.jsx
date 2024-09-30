@@ -33,8 +33,8 @@ const App = () => {
 
   return (
     <Router>
-      <ImportantMessage />
       <ScrollToTop />
+      <ImportantMessage />
       <Navigation />
       <Routes>
         {/* Home page: Show all components */}

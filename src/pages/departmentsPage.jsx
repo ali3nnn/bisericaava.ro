@@ -1,9 +1,11 @@
 import React from "react";
 import "../App.css";
+import { convertStringToHTML } from "../utils"
 
-function convertStringToHTML(htmlString) {
-    return <div dangerouslySetInnerHTML={{ __html: htmlString }} />;
-}
+// function convertStringToHTML(htmlString) {
+//     return <div dangerouslySetInnerHTML={{ __html: htmlString }} />;
+// }
+
 export const DepartmentsPage = ({ data }) => {
     return (
         <div className="container">
