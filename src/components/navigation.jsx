@@ -16,7 +16,7 @@ export const Navigation = (props) => {
     links.forEach((link) => {
       const linkHref = link.getAttribute('href').replace('/#', ''); // Remove '/#' for matching
       const currentPath = location.pathname; // Get current hash without the '#'
-      
+
       if (linkHref === currentPath) {
         link.classList.add('page-active');
       }
@@ -24,7 +24,7 @@ export const Navigation = (props) => {
   }, [location]); // Re-run every time the URL changes
 
   return (
-    <nav id="menu" className="navbar navbar-default navbar-fixed-top">
+    <nav id="menu" className="navbar navbar-default">
       <div className="container">
         <div className="navbar-header">
           <button

@@ -1,9 +1,11 @@
 @import './constants.css';
+@import './sticky.css';
 @import './reset.css';
 @import './departments.css';
 @import './services.css';
 @import './gallery.css';
 @import './warning.css';
+@import './page-template.css';
 
 /* Buttons */
 
@@ -135,8 +137,9 @@ button {
   background-color: var(--header-background);
   border-color: rgba(231, 231, 231, 0);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  position: relative;
+  /* position: fixed; */
   margin-bottom: 0;
+  border-radius: 0;
 }
 
 #menu a.navbar-brand {
@@ -427,7 +430,8 @@ a:focus,
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  height: calc(100% - 81px);
+  /* height: calc(100% - 81px); */
+  height: 100%;
 }
 
 .intro .overlay {
@@ -457,6 +461,10 @@ a:focus,
   line-height: 30px;
   margin: 0 auto;
   margin-bottom: 60px;
+}
+header {
+  padding-top: 81px;
+  position: relative;
 }
 
 header .container {
@@ -496,6 +504,7 @@ header .intro-text {
 /* About Section */
 #about {
   padding: 100px 0;
+  background: white;
 }
 
 #about h3 {
@@ -551,6 +560,7 @@ header .intro-text {
 /* Portfolio Section */
 #portfolio {
   padding: 100px 0;
+  background: white;
 }
 
 .portfolio-item {
@@ -852,6 +862,7 @@ label {
 /* Maps */
 #maps {
   padding: 100px 15px;
+  background: white;
 }
 
 .map-section {

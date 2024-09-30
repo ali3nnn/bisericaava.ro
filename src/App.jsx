@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
-import { Navigation } from "./components/navigation";
+import { Sticky } from "./components/sticky";
 import { Header } from "./components/header";
 import { About } from "./components/about";
 import { Departments } from "./components/departments";
 import { Gallery } from "./components/gallery";
 import { Contact } from "./components/contact";
-import { ImportantMessage } from "./components/warning";
 import Maps from "./components/maps";
 
 import { PageTemplate } from "./pages/page-template";
@@ -34,8 +33,7 @@ const App = () => {
   return (
     <Router>
       <ScrollToTop />
-      <ImportantMessage />
-      <Navigation />
+      <Sticky />
       <Routes>
         {/* Home page: Show all components */}
         <Route

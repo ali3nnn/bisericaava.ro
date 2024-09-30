@@ -3,12 +3,9 @@ import "../App.css";
 
 export const PageTemplate = ({ components }) => {
     return (
-        <div>
+        <div className="page-template">
             {components?.map(({ component: Component, props }, index) => (
-                <div key={index} className="dynamic-component">
-                    {console.log(props)}
-                    <Component data={props} />
-                </div>
+                <Component key={index} data={props} />
             ))}
         </div>
     );
