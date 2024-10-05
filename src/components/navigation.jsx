@@ -59,11 +59,11 @@ export const Navigation = (props) => {
                 Departamente
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="#portfolio" className="page-scroll">
                 Galerie
               </a>
-            </li>
+            </li> */}
             {/* <li>
               <a href="#maps" className="page-scroll">
                 HARTA
