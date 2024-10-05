@@ -2,7 +2,7 @@
     transition: all 0.2s ease;
     transform: scale(1);
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 13px;
 }
 
 .react-photo-gallery--gallery img:hover {
