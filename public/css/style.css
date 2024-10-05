@@ -933,6 +933,9 @@ p {
   #about {
     padding: 50px 0px;
   }
+  .department-name {
+    font-size: 3rem !important;
+  }
 }
 
 @media (max-width: 576px) {
