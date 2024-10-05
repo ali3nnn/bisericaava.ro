@@ -430,8 +430,8 @@ a:focus,
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  /* height: calc(100% - 81px); */
-  height: 100%;
+  height: calc(100% - 81px);
+  /* height: 100%; */
 }
 
 .intro .overlay {
@@ -921,4 +921,25 @@ h2 {
 p {
   margin-bottom: 10px;
   /* Space below paragraph */
+}
+
+@media (max-width: 768px) {
+  .intro h1 {
+    font-size: 62px;
+  }
+  .intro p {
+    font-size: 15px;
+  }
+  #about {
+    padding: 50px 0px;
+  }
+}
+
+@media (max-width: 576px) {
+  .intro h1 {
+    font-size: 42px;
+  }
+  .intro p {
+    font-size: 15px;
+  }
 }
