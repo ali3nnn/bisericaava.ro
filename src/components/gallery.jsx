@@ -3,7 +3,7 @@ import GalleryT from "react-photo-gallery";
 
 const photos = [
   {
-    src: "https://lh5.googleusercontent.com/p/AF1QipPFfi5vhO2PWWpWVwhplH38-9rMJ5YGmJZ9PpO7=w203-h270-k-no",
+    src: "img/tort.webp",
     width: 203,
     height: 270
   },
