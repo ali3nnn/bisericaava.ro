@@ -8,8 +8,7 @@ export const Departments = (props) => {
         <div className="section-title">
           <h2>Departamentele bisericii</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-            dapibus leonec.
+            Implică-te într-unul din departamentele bisericii!
           </p>
         </div>
         <div className="card-grid">

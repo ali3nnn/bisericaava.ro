@@ -46,8 +46,7 @@ export const Gallery = (props) => {
         <div className="section-title">
           <h2>Comunitatea AVA</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-            dapibus leonec.
+          Comunitatea oamenilor născuți din nou, care au ca temelie Biblia și ca scop glorificarea lui Dumnezeu.
           </p>
         </div>
         <GalleryT photos={photos} />

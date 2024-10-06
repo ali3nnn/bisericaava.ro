@@ -41,9 +41,9 @@ export const Contact = (props) => {
           <div className="col-md-4">
             <h3>Donează</h3>
             <p>{props?.data?.donations?.name}</p>
-            <p>RON: {props?.data?.donations?.ron}</p>
-            <p>EUR: {props?.data?.donations?.eur}</p>
-            <p>USD: {props?.data?.donations?.usd}</p>
+            {props?.data?.donations?.ron && <p>RON: {props.data.donations.ron}</p>}
+            {props?.data?.donations?.eur && <p>EUR: {props.data.donations.eur}</p>}
+            {props?.data?.donations?.usd && <p>USD: {props.data.donations.usd}</p>}
             <p>{props?.data?.donations?.bank}</p>
             <p>{props?.data?.donations?.swift}</p>
           </div>
