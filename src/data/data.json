@@ -100,60 +100,6 @@
       "content": "Cuvântul lui Dumnezeu este viu și lucrător, iar predicarea în cadrul Bisericii Ava este centrată pe Scriptură, inspirată de Duhul Sfânt și aplicabilă în viața de zi cu zi. Prin mesajele biblice, ne dorim să aducem lumină în inimile celor care ascultă, provocându-i la o viață trăită în ascultare de voia lui Dumnezeu și în conformitate cu învățăturile lui Hristos. Fundamentul predicilor noastre se bazează pe cele 5 Sola ale Reformei: Sola Scriptura – numai Scriptura este autoritatea finală, Sola Fide – doar credința aduce mântuirea, Sola Gratia – mântuirea este un dar al harului, Solus Christus – Hristos este singurul Mijlocitor, și Soli Deo Gloria – toată slava și gloria sunt doar ale lui Dumnezeu. Aceste principii ne ghidează și ne inspiră în fiecare mesaj adus înaintea comunitățiiCuvântul lui Dumnezeu este viu și lucrător, iar predicarea în cadrul Bisericii Ava este centrată pe Scriptură, inspirată de Duhul Sfânt și aplicabilă în viața de zi cu zi. Prin mesajele biblice, ne dorim să aducem lumină în inimile celor care ascultă, provocându-i la o viață trăită în ascultare de voia lui Dumnezeu și în conformitate cu învățăturile lui Hristos. Fundamentul predicilor noastre se bazează pe cele 5 Sola ale Reformei: Sola Scriptura – numai Scriptura este autoritatea finală, Sola Fide – doar credința aduce mântuirea, Sola Gratia – mântuirea este un dar al harului, Solus Christus – Hristos este singurul Mijlocitor, și Soli Deo Gloria – toată slava și gloria sunt doar ale lui Dumnezeu. Aceste principii ne ghidează și ne inspiră în fiecare mesaj adus înaintea comunității."
     }
   ],
-  "Testimonials": [
-    {
-      "img": "img/testimonials/01.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "John Doe"
-    },
-    {
-      "img": "img/testimonials/02.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "Johnathan Doe"
-    },
-    {
-      "img": "img/testimonials/03.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "John Doe"
-    },
-    {
-      "img": "img/testimonials/04.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "Johnathan Doe"
-    },
-    {
-      "img": "img/testimonials/05.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "John Doe"
-    },
-    {
-      "img": "img/testimonials/06.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "Johnathan Doe"
-    }
-  ],
-  "Team": [
-    {
-      "img": "img/team/01.jpg",
-      "name": "John Doe",
-      "job": "Director"
-    },
-    {
-      "img": "img/team/02.jpg",
-      "name": "Mike Doe",
-      "job": "Senior Designer"
-    },
-    {
-      "img": "img/team/03.jpg",
-      "name": "Jane Doe",
-      "job": "Senior Designer"
-    },
-    {
-      "img": "img/team/04.jpg",
-      "name": "Karen Doe",
-      "job": "Project Manager"
-    }
-  ],
   "Contact": {
     "address": "Strada Tineretului 2",
     "gmaps": "https://g.co/kgs/iVRLaR8",
@@ -169,27 +115,5 @@
       "bank": "Banca Transilvania",
       "swift": "BTRLRO22XXX"
     }
-  },
-  "Features": [
-    {
-      "icon": "fa fa-comments-o",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
-    },
-    {
-      "icon": "fa fa-bullhorn",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
-    },
-    {
-      "icon": "fa fa-group",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
-    },
-    {
-      "icon": "fa fa-magic",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
-    }
-  ]
+  }
 }
