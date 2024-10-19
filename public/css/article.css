@@ -1,0 +1,72 @@
+/* General Styles */
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  /* Church Introduction */
+  .church-intro {
+    text-align: center;
+    background-color: #e3f2fd;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .church-intro h1 {
+    font-size: 2.5em;
+    color: #1a73e8;
+    margin-bottom: 10px;
+  }
+  
+  .church-intro .intro-text {
+    font-size: 1.2em;
+    color: #333;
+  }
+  
+  /* History Section */
+  .history h2 {
+    font-size: 2em;
+    color: #4a90e2;
+  }
+  
+  .history p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .history .principles {
+    background-color: #e8f5e9;
+    padding: 20px;
+    border-left: 5px solid #4caf50;
+    margin: 20px 0;
+    border-radius: 5px;
+  }
+  
+  .history .principles p {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2e7d32;
+    margin: 5px 0;
+  }
+  
+  /* Beliefs Section */
+  .beliefs h2 {
+    font-size: 2em;
+    color: #f57c00;
+  }
+  
+  .beliefs ul {
+    padding-left: 20px;
+  }
+  
+  .belief-list li {
+    font-size: 1.1em;
+    color: #555;
+    margin: 10px 0;
+    line-height: 1.5;
+    list-style-type: disc;
+  }
+  
