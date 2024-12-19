@@ -1,4 +1,5 @@
 import React from "react";
+import StripeButton from "../components/donate"
 
 export const Contact = (props) => {
 
@@ -46,6 +47,7 @@ export const Contact = (props) => {
             {props?.data?.donations?.usd && <p>USD: {props.data.donations.usd}</p>}
             <p>{props?.data?.donations?.bank}</p>
             <p>{props?.data?.donations?.swift}</p>
+            <StripeButton />
           </div>
           <div className="col-md-12">
             <div className="row">
