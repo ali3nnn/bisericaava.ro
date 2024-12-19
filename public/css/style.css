@@ -8,6 +8,40 @@
 @import './page-template.css';
 @import './article.css';
 
+/* Header Nav */
+a.donate-button {
+  display: inline-block;
+  padding: 8px 24px !important;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #0074d4;
+  border: none;
+  border-radius: 6px !important;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.donate-button:hover {
+  background-color: #0074d4 !important;
+  color: white !important;
+  /* transform: translateY(-2px); */
+  /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); */
+}
+
+a.donate-button:after {
+  display: none !important;
+}
+
+.donate-button:active {
+  /* transform: translateY(0); */
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  /* background-color: #463cb8; */
+}
+
+
 /* Buttons */
 
 button {

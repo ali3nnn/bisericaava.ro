@@ -59,19 +59,14 @@ export const Navigation = (props) => {
                 Departamente
               </a>
             </li>
-            {/* <li>
-              <a href="#portfolio" className="page-scroll">
-                Galerie
-              </a>
-            </li> */}
-            {/* <li>
-              <a href="#maps" className="page-scroll">
-                HARTA
-              </a>
-            </li> */}
             <li>
               <a href="#contact" className="page-scroll">
                 Contact
+              </a>
+            </li>
+            <li>
+              <a href="https://donate.stripe.com/14k02gbBvdlN8rC3cc" target="blank_" class="donate-button">
+                Donează online
               </a>
             </li>
           </ul>
