@@ -24,7 +24,8 @@ a.donate-button {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.donate-button:hover {
+.donate-button:hover,
+.donate-button:focus {
   background-color: #0074d4 !important;
   color: white !important;
   /* transform: translateY(-2px); */
@@ -34,13 +35,6 @@ a.donate-button {
 a.donate-button:after {
   display: none !important;
 }
-
-.donate-button:active {
-  /* transform: translateY(0); */
-  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-  /* background-color: #463cb8; */
-}
-
 
 /* Buttons */
 
