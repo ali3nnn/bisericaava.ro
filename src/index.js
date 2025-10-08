@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <SpeedInsights />
   </React.StrictMode>,
   document.getElementById('root')
 );
