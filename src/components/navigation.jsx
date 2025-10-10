@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Navigation = (props) => {
   const location = useLocation();
@@ -55,9 +56,9 @@ export const Navigation = (props) => {
               </a>
             </li>
             <li>
-              <a href="/departamente" className="page-scroll">
+              <Link to="/departamente" className="page-scroll">
                 Departamente
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#contact" className="page-scroll">
