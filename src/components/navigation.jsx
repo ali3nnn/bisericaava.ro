@@ -5,20 +5,20 @@ export const Navigation = (props) => {
   const location = useLocation();
 
   useEffect(() => {
-    const links = document.querySelectorAll(".navbar-nav a"); // Select all links in the navbar
+    const links = document.querySelectorAll('.navbar-nav a'); // Select all links in the navbar
 
     // Remove page-active class from all links
     links.forEach((link) => {
-      link.classList.remove("page-active");
+      link.classList.remove('page-active');
     });
 
     // Add page-active class to the link that matches the current URL
     links.forEach((link) => {
-      const linkHref = link.getAttribute("href").replace("/#", ""); // Remove '/#' for matching
+      const linkHref = link.getAttribute('href').replace('/#', ''); // Remove '/#' for matching
       const currentPath = location.pathname; // Get current hash without the '#'
 
       if (linkHref === currentPath) {
-        link.classList.add("page-active");
+        link.classList.add('page-active');
       }
     });
   }, [location]); // Re-run every time the URL changes
@@ -50,7 +50,7 @@ export const Navigation = (props) => {
         >
           <ul className="nav navbar-nav navbar-right">
             <li>
-              <a href="/despre-noi" className="page-scroll">
+              <a href="/#/despre-noi" className="page-scroll">
                 Despre noi
               </a>
             </li>
@@ -65,11 +65,7 @@ export const Navigation = (props) => {
               </a>
             </li>
             <li>
-              <a
-                href="https://donate.stripe.com/14k02gbBvdlN8rC3cc"
-                target="blank_"
-                class="donate-button"
-              >
+              <a href="https://donate.stripe.com/14k02gbBvdlN8rC3cc" target="blank_" class="donate-button">
                 Donează online
               </a>
             </li>
