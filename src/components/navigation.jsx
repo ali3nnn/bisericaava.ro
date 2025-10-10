@@ -50,12 +50,12 @@ export const Navigation = (props) => {
         >
           <ul className="nav navbar-nav navbar-right">
             <li>
-              <a href="/#/despre-noi" className="page-scroll">
+              <a href="/despre-noi" className="page-scroll">
                 Despre noi
               </a>
             </li>
             <li>
-              <a href="/#/departamente" className="page-scroll">
+              <a href="/departamente" className="page-scroll">
                 Departamente
               </a>
             </li>
