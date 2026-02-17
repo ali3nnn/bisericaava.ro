@@ -466,6 +466,35 @@ a:focus,
 .intro .overlay {
   background: rgba(0, 0, 0, 0.7);
   height: 100%;
+  position: relative;
+}
+
+.intro-bottom {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.intro-bottom p {
+  margin: 0 !important;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.intro-bottom a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.intro-bottom a:hover {
+  text-decoration: underline;
 }
 
 .intro h1 {

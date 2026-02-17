@@ -60,6 +60,10 @@ export const Header = (props) => {
               </div>
             </div>
           </div>
+          <div className="intro-bottom">
+            <p><i className="fa fa-clock-o"></i> Duminică de la ora 10 la 12</p>
+            <p><a href="https://maps.app.goo.gl/W85vQDMNpvfqsvA99" target="_blank" rel="noopener noreferrer"><i className="fa fa-map-marker"></i> Strada Tineretului 2, Targoviste</a></p>
+          </div>
         </div>
       </div>
     </header>
