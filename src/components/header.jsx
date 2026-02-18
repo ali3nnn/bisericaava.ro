@@ -4,6 +4,12 @@ export const Header = (props) => {
   return (
     <header id="header">
       <div className="intro">
+        <img
+          src="img/splash.webp"
+          alt=""
+          className="intro-bg"
+          fetchPriority="high"
+        />
         <div className="overlay">
           <div className="container">
             <div className="row">

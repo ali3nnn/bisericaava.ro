@@ -7,6 +7,8 @@ const EXTENSIONS = [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff"];
 const MAX_DIMENSION = 1920;
 
 const convertToWebp = process.argv.includes("--webp");
+const qualityArg = process.argv.find((a) => a.startsWith("--quality="));
+const quality = qualityArg ? parseInt(qualityArg.split("=")[1], 10) : 80;
 
 async function processImages() {
   const files = fs.readdirSync(IMG_DIR);
@@ -22,7 +24,7 @@ async function processImages() {
   }
 
   const mode = convertToWebp ? "Converting to webp" : "Reducing size";
-  console.log(`${mode} for ${toProcess.length} image(s)...\n`);
+  console.log(`${mode} for ${toProcess.length} image(s) (quality: ${quality})...\n`);
 
   for (const file of toProcess) {
     const inputPath = path.join(IMG_DIR, file);
@@ -45,13 +47,13 @@ async function processImages() {
       }
 
       if (convertToWebp) {
-        await pipeline.webp({ quality: 80 }).toFile(outputPath);
+        await pipeline.webp({ quality }).toFile(outputPath);
       } else if (ext === ".webp") {
-        await pipeline.webp({ quality: 80 }).toFile(outputPath);
+        await pipeline.webp({ quality }).toFile(outputPath);
       } else if (ext === ".png") {
-        await pipeline.png({ quality: 80, compressionLevel: 9 }).toFile(outputPath);
+        await pipeline.png({ quality, compressionLevel: 9 }).toFile(outputPath);
       } else {
-        await pipeline.jpeg({ quality: 80 }).toFile(outputPath);
+        await pipeline.jpeg({ quality }).toFile(outputPath);
       }
 
       const originalSize = fs.statSync(inputPath).size;
