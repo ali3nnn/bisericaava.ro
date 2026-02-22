@@ -159,7 +159,7 @@ button {
 
 #menu h1,
 #menu p {
-  color: var(---heading-color)
+  color: var(--heading-color);
 }
 
 #menu.navbar-default {
@@ -454,9 +454,9 @@ a:focus,
 .intro {
   display: table;
   width: 100%;
-  padding: 0;
+  padding-top: 81px;
   background-color: #e5e5e5;
-  height: calc(100% - 81px);
+  height: 100vh;
   position: relative;
   overflow: hidden;
 }
@@ -530,17 +530,12 @@ a:focus,
   margin-bottom: 60px;
 }
 
-header {
-  padding-top: 81px;
-  position: relative;
-}
-
-header .container {
+.intro .container {
   top: 50%;
   position: relative;
 }
 
-header .intro-text {
+.intro .intro-text {
   /* padding-top: 350px; */
   /* padding-bottom: 200px; */
   text-align: center;
@@ -914,11 +909,12 @@ label {
 }
 
 #footer a {
-  color: var(--link-color);
+  color: #fff;
 }
 
 #footer a:hover {
-  border-bottom: 2px solid #608dfd;
+  color: #fff;
+  border-bottom: 2px solid #fff;
 }
 
 @media (max-width: 768px) {

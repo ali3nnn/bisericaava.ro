@@ -1,0 +1,73 @@
+import React from "react";
+
+export const Header = ({ data }) => {
+  return (
+    <section id="intro" className="intro">
+      <img
+        src="/img/splash.webp"
+        alt="Biserica Crestina Baptista AVA Targoviste"
+        className="intro-bg"
+        fetchPriority="high"
+      />
+      <div className="overlay">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8 intro-text">
+              <h1>
+                {data ? data.title : ""}
+                <span></span>
+              </h1>
+              <p>{data ? data.paragraph : ""}</p>
+              <a
+                href="#about"
+                className="arrow"
+              >
+                <svg
+                  version="1.1"
+                  id="Down-Arrow-Heart"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 960 540"
+                  style={{ enableBackground: "new 0 0 960 540" }}
+                >
+                  <g>
+                    <path
+                      id="Left1st"
+                      className="path"
+                      style={{
+                        fill: "none",
+                        stroke: "",
+                        strokeWidth: 18,
+                        strokeMiterlimit: 10
+                      }}
+                      d="M491.333,364L270,201c0,0,129.1-141.376,314.56,0 C700,289,790,236,790,236"
+                    />
+                  </g>
+                  <g>
+                    <path
+                      id="Right2nd"
+                      className="path"
+                      style={{
+                        fill: "none",
+                        stroke: "",
+                        strokeWidth: 1,
+                        strokeMiterlimit: 10
+                      }}
+                      d="M481,364.25L667,227c0,0-48.75-124.5-194-54"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="intro-bottom">
+          <p><i className="fa fa-clock-o"></i> Duminică de la ora 10 la 12</p>
+          <p><a href="https://maps.app.goo.gl/W85vQDMNpvfqsvA99" target="_blank" rel="noopener noreferrer"><i className="fa fa-map-marker"></i> Strada Tineretului 2, Targoviste</a></p>
+        </div>
+      </div>
+    </section>
+  );
+};

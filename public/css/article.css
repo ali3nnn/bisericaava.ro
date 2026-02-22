@@ -1,12 +1,4 @@
-/* General Styles */
-section {
-    margin: 20px 0;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-  }
-  
-  /* Church Introduction */
+/* Church Introduction */
   .church-intro {
     text-align: center;
     background-color: #e3f2fd;
