@@ -49,7 +49,23 @@ export const Gallery = (props) => {
           Comunitatea oamenilor născuți din nou, care au ca temelie Biblia și ca scop glorificarea lui Dumnezeu.
           </p>
         </div>
-        <GalleryT photos={photos} />
+        <GalleryT
+          photos={photos}
+          renderImage={({ photo, margin }) => (
+            <img
+              key={photo.src}
+              src={photo.src}
+              alt={photo.alt || ""}
+              loading="lazy"
+              style={{
+                margin,
+                display: "block",
+                width: photo.width,
+                height: photo.height,
+              }}
+            />
+          )}
+        />
       </div>
     </div>
   );
