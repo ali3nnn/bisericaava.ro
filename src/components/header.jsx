@@ -2,76 +2,51 @@ import React from "react";
 
 export const Header = (props) => {
   return (
-    <header id="header">
-      <div className="intro">
-        <img
-          src="img/splash.webp"
-          alt=""
-          className="intro-bg"
-          fetchPriority="high"
-        />
-        <div className="overlay">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-8 intro-text">
-                <h1>
-                  {props.data ? props.data.title : "Loading"}
-                  <span></span>
-                </h1>
-                <p>{props.data ? props.data.paragraph : "Loading"}</p>
-                <a
-                  href="#about"
-                  // className="btn btn-custom btn-lg page-scroll"
-                  className="arrow"
-                >
-                  <svg
-                    version="1.1"
-                    id="Down-Arrow-Heart"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    x="0px"
-                    y="0px"
-                    viewBox="0 0 960 540"
-                    style={{ enableBackground: "new 0 0 960 540" }}
-                  >
-                    <g>
-                      <path
-                        id="Left1st"
-                        className="path"
-                        style={{
-                          fill: "none",
-                          stroke: "",
-                          strokeWidth: 18,
-                          strokeMiterlimit: 10
-                        }}
-                        d="M491.333,364L270,201c0,0,129.1-141.376,314.56,0 C700,289,790,236,790,236"
-                      />
-                    </g>
-                    <g>
-                      <path
-                        id="Right2nd"
-                        className="path"
-                        style={{
-                          fill: "none",
-                          stroke: "",
-                          strokeWidth: 1,
-                          strokeMiterlimit: 10
-                        }}
-                        d="M481,364.25L667,227c0,0-48.75-124.5-194-54"
-                      />
-                    </g>
-                  </svg>
-
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="intro-bottom">
-            <p><i className="fa fa-clock-o"></i> Duminică de la ora 10 la 12</p>
-            <p><a href="https://maps.app.goo.gl/W85vQDMNpvfqsvA99" target="_blank" rel="noopener noreferrer"><i className="fa fa-map-marker"></i> Strada Tineretului 2, Targoviste</a></p>
+    <header id="header" className="hero">
+      <img
+        src="img/splash.webp"
+        alt="Comunitatea Bisericii AVA în închinare"
+        className="hero__bg"
+        fetchpriority="high"
+      />
+      <div className="hero__inner container">
+        <div className="hero__content">
+          <h1 className="hero__title">
+            {props.data ? props.data.title : "Bine ați venit!"}
+          </h1>
+          <p className="hero__lead">
+            {props.data
+              ? props.data.paragraph
+              : "Dumnezeu ne-a pus în inimă Duhul Fiului Său, care strigă „Ava”, adică Tată!"}
+          </p>
+          <div className="hero__actions">
+            <a href="#about" className="btn btn--light">
+              Descoperă comunitatea
+            </a>
+            <a href="#contact" className="btn btn--primary">
+              Vino duminică
+            </a>
           </div>
         </div>
+
+        <div className="hero__meta">
+          <span className="hero__chip">
+            <i className="fa fa-clock-o" aria-hidden="true"></i> Duminică, ora 10:00–12:00
+          </span>
+          <a
+            className="hero__chip"
+            href="https://maps.app.goo.gl/W85vQDMNpvfqsvA99"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa fa-map-marker" aria-hidden="true"></i> Strada Tineretului 2, Târgoviște
+          </a>
+        </div>
       </div>
+
+      <a href="#about" className="hero__scroll" aria-label="Derulează în jos">
+        <span className="visually-hidden">Derulează în jos</span>
+      </a>
     </header>
   );
 };

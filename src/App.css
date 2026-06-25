@@ -1,24 +1,2 @@
-@media screen and (max-width: 400px) {
-  #features {
-    padding: 20px;
-    width: 111%;
-  }
-  #header,
-  #about,
-  #services,
-  #testimonials,
-  #team,
-  #contact,
-  #maps,
-  #footer {
-    width: 100%;
-  }
-
-  #portfolio {
-    width: 100%;
-  }
-}
-
-.footerLink, .footerLink:hover, .footerLink:active {
-  color: var(--highlight-color);
-}
+/* Styles live in src/styles/{tokens,base,components}.css (imported in index.js).
+   This file is kept only because a few components import it. */

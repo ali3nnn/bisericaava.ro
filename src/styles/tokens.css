@@ -1,0 +1,234 @@
+/* ============================================================
+   BISERICA AVA — Design Tokens & Themes
+   ------------------------------------------------------------
+   THREE SWAPPABLE THEMES:
+     • sacred    — Warm & Sacred   (off-white + terracotta)   [default]
+     • reverent  — Modern & Reverent (deep slate + gold)       [dark]
+     • airy      — Light & Airy     (cool white + sage)
+
+   HOW TO SWITCH
+     1. Permanently: change DEFAULT_THEME in public/index.html, OR
+        set <body data-theme="reverent"> (or "airy" / "sacred").
+     2. To preview live: add ?theme=reverent (or airy / sacred)
+        to the URL.
+
+   Components reference ONLY the "SEMANTIC ROLES" tokens
+   (e.g. --color-accent). Each theme below redefines the palette
+   + semantic roles, so the whole site re-skins on switch.
+   Shared, non-color tokens (type, space, radius, motion) live
+   in :root and are inherited by every theme.
+   ============================================================ */
+
+:root {
+  /* ------------------------------------------------------------
+     TYPOGRAPHY
+     ------------------------------------------------------------ */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --text-xs:   clamp(0.75rem, 0.72rem + 0.15vw, 0.82rem);
+  --text-sm:   clamp(0.86rem, 0.82rem + 0.2vw, 0.95rem);
+  --text-base: clamp(1rem,   0.96rem + 0.25vw, 1.12rem);
+  --text-lg:   clamp(1.15rem, 1.05rem + 0.5vw, 1.35rem);
+  --text-xl:   clamp(1.35rem, 1.2rem  + 0.8vw, 1.75rem);
+  --text-2xl:  clamp(1.7rem,  1.4rem  + 1.5vw, 2.5rem);
+  --text-3xl:  clamp(2.1rem,  1.6rem  + 2.5vw, 3.4rem);
+  --text-4xl:  clamp(2.6rem,  1.8rem  + 4vw,   4.75rem);
+
+  --leading-tight:  1.12;
+  --leading-snug:   1.32;
+  --leading-normal: 1.65;
+
+  /* ------------------------------------------------------------
+     SPACE / SIZE
+     ------------------------------------------------------------ */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  --container:        1180px;
+  --container-narrow: 760px;
+  --gutter: clamp(1.1rem, 4vw, 2.5rem);
+
+  /* ------------------------------------------------------------
+     RADIUS / SHADOW / MOTION  (shadow-accent is set per theme)
+     ------------------------------------------------------------ */
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   22px;
+  --radius-xl:   32px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(20, 15, 11, .06), 0 2px 6px rgba(20, 15, 11, .05);
+  --shadow-md: 0 6px 18px rgba(20, 15, 11, .09), 0 2px 6px rgba(20, 15, 11, .05);
+  --shadow-lg: 0 18px 50px rgba(20, 15, 11, .16);
+
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --dur: .45s;
+}
+
+/* ============================================================
+   THEME 1 — WARM & SACRED  (default)
+   ============================================================ */
+:root,
+[data-theme="sacred"] {
+  /* palette */
+  --brand-50:  #fbf2ea;
+  --brand-100: #f5e0cf;
+  --brand-200: #ebbf9f;
+  --brand-300: #df9f70;
+  --brand-400: #d4824b;
+  --brand-500: #c2703d;
+  --brand-600: #a85a2f;
+  --brand-700: #854624;
+  --brand-800: #5f3219;
+  --brand-900: #3d2011;
+
+  --paper:     #faf6f0;
+  --surface:   #ffffff;
+  --surface-2: #f3ece1;
+  --ink:       #241e18;
+  --ink-soft:  #463d34;
+  --muted:     #6e635a;
+  --line:      #e8dfd3;
+  --night:     #1b1611;
+  --on-dark:   #f6efe6;
+
+  /* semantic roles */
+  --color-bg:            var(--paper);
+  --color-surface:       var(--surface);
+  --color-surface-alt:   var(--surface-2);
+  --color-text:          var(--ink);
+  --color-text-soft:     var(--ink-soft);
+  --color-text-muted:    var(--muted);
+  --color-heading:       var(--ink);
+  --color-border:        var(--line);
+
+  --color-accent:        var(--brand-500);
+  --color-accent-strong: var(--brand-600);
+  --color-accent-soft:   var(--brand-50);
+  --color-on-accent:     #ffffff;
+
+  --color-cta:           var(--brand-600);
+  --color-cta-hover:     var(--brand-700);
+  --color-on-cta:        #ffffff;
+
+  --color-dark:          var(--night);
+  --color-on-dark:       var(--on-dark);
+  --color-link:          var(--brand-600);
+
+  --shadow-accent: 0 12px 30px rgba(194, 112, 61, .30);
+}
+
+/* ============================================================
+   THEME 2 — MODERN & REVERENT  (deep slate + gold, dark)
+   ============================================================ */
+[data-theme="reverent"] {
+  /* palette — gold ramp */
+  --brand-50:  #f7efda;
+  --brand-100: #efddb0;
+  --brand-200: #e6cb86;
+  --brand-300: #dcb95f;
+  --brand-400: #cfa543;
+  --brand-500: #c2923a;
+  --brand-600: #a87b2e;
+  --brand-700: #876224;
+  --brand-800: #614619;
+  --brand-900: #3f2e10;
+
+  /* palette — slate neutrals */
+  --paper:     #0f1622;
+  --surface:   #16202e;
+  --surface-2: #131c28;
+  --ink:       #e8edf4;
+  --ink-soft:  #c4cdd9;
+  --muted:     #93a0b0;
+  --line:      #25303f;
+  --night:     #0b111a;
+  --on-dark:   #e8edf4;
+
+  /* semantic roles */
+  --color-bg:            var(--paper);
+  --color-surface:       var(--surface);
+  --color-surface-alt:   var(--surface-2);
+  --color-text:          var(--ink);
+  --color-text-soft:     var(--ink-soft);
+  --color-text-muted:    var(--muted);
+  --color-heading:       #f3f6fa;
+  --color-border:        var(--line);
+
+  --color-accent:        var(--brand-500);
+  --color-accent-strong: var(--brand-400);
+  --color-accent-soft:   rgba(201, 162, 74, .12);
+  --color-on-accent:     #15202c;
+
+  --color-cta:           var(--brand-500);
+  --color-cta-hover:     var(--brand-400);
+  --color-on-cta:        #15202c;
+
+  --color-dark:          var(--night);
+  --color-on-dark:       var(--on-dark);
+  --color-link:          var(--brand-300);
+
+  --shadow-accent: 0 12px 30px rgba(201, 162, 74, .25);
+}
+
+/* ============================================================
+   THEME 3 — LIGHT & AIRY  (cool white + sage)
+   ============================================================ */
+[data-theme="airy"] {
+  /* palette — sage ramp */
+  --brand-50:  #eef6f3;
+  --brand-100: #d6ebe4;
+  --brand-200: #aed8cb;
+  --brand-300: #84c2b1;
+  --brand-400: #5dab97;
+  --brand-500: #469483;
+  --brand-600: #387a6b;
+  --brand-700: #2c5f54;
+  --brand-800: #21463e;
+  --brand-900: #163029;
+
+  /* palette — cool neutrals */
+  --paper:     #f6f9f8;
+  --surface:   #ffffff;
+  --surface-2: #eef3f2;
+  --ink:       #1d2a28;
+  --ink-soft:  #38463f;
+  --muted:     #5e6e6a;
+  --line:      #e1e9e7;
+  --night:     #18211f;
+  --on-dark:   #eef6f3;
+
+  /* semantic roles */
+  --color-bg:            var(--paper);
+  --color-surface:       var(--surface);
+  --color-surface-alt:   var(--surface-2);
+  --color-text:          var(--ink);
+  --color-text-soft:     var(--ink-soft);
+  --color-text-muted:    var(--muted);
+  --color-heading:       var(--ink);
+  --color-border:        var(--line);
+
+  --color-accent:        var(--brand-600);
+  --color-accent-strong: var(--brand-700);
+  --color-accent-soft:   var(--brand-50);
+  --color-on-accent:     #ffffff;
+
+  --color-cta:           var(--brand-600);
+  --color-cta-hover:     var(--brand-700);
+  --color-on-cta:        #ffffff;
+
+  --color-dark:          var(--night);
+  --color-on-dark:       var(--on-dark);
+  --color-link:          var(--brand-700);
+
+  --shadow-accent: 0 12px 30px rgba(56, 122, 107, .26);
+}

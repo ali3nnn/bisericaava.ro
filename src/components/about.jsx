@@ -2,22 +2,24 @@ import React from "react";
 
 export const About = (props) => {
   return (
-    <div id="about">
+    <section id="about" className="section">
       <div className="container">
-        <div className="row">
-          <div className="col-xs-12 col-md-6">
-            {" "}
-            <img src="img/despre.webp" className="img-responsive" alt="" loading="lazy" />{" "}
+        <div className="about__grid" data-reveal>
+          <div className="about__media">
+            <img src="img/despre.webp" alt="Comunitatea Bisericii AVA" loading="lazy" />
           </div>
-          <div className="col-xs-12 col-md-6">
-            <div className="about-text">
-              <h2>Despre noi</h2>
-              <p>{props.data ? props.data.paragraph : "loading..."}</p>
-              <a href="/#/despre-noi"><button className="custom-btn"><span>Află mai multe</span></button></a>
-            </div>
+          <div className="about__body">
+            <span className="eyebrow">Cine suntem</span>
+            <h2 className="about__title">Despre noi</h2>
+            <p className="about__text">
+              {props.data ? props.data.paragraph : "loading..."}
+            </p>
+            <a href="/#/despre-noi" className="btn btn--ghost">
+              Află mai multe
+            </a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
