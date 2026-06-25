@@ -1,50 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { convertStringToHTML } from '../utils'
-import JsonData from "../data/data.json";
 
-export const ImportantMessage = () => {
+export const ImportantMessage = ({ message }) => {
     const [visible, setVisible] = useState(false);
     const [loading, setLoading] = useState(true);
 
-    const [landingPageData, setLandingPageData] = useState({});
-
-    useEffect(() => {
-        setLandingPageData(JsonData);
-    }, []);
-
-    // Check localStorage to see if the message has been accepted
+    // Check localStorage to see if the message has been dismissed
     useEffect(() => {
         const messageAccepted = localStorage.getItem('messageAccepted');
-        if (messageAccepted === 'true') {
-            setVisible(false);
-        } else {
-            setVisible(true); // Show the message if not accepted
-        }
-        setLoading(false); // Set loading to false after checking
+        setVisible(messageAccepted !== 'true');
+        setLoading(false);
     }, []);
 
-    // Function to handle accepting the message
     const acceptMessage = () => {
         localStorage.setItem('messageAccepted', 'true');
-        setVisible(false); // Hide the message after accepting
+        setVisible(false);
     };
 
-    if (loading) return null; // Don't render anything while loading
-
-    if (!visible) return null; // Don't render if the message is dismissed or accepted
-
-    const message = landingPageData?.Warning?.message
+    if (loading || !visible || !message) return null;
 
     return (
-        <>
-            {message && <div className="important-message">
-                <div className="container">
-                    <div className="message-content">
-                        <p>{convertStringToHTML(message)}</p>
-                        <button className="close-btn" onClick={acceptMessage}>✕</button>
-                    </div>
-                </div>
-            </div>}
-        </>
+        <div className="banner">
+            <div className="container banner__inner">
+                <p>{convertStringToHTML(message)}</p>
+                <button className="banner__close" aria-label="Închide" onClick={acceptMessage}>✕</button>
+            </div>
+        </div>
     );
 };

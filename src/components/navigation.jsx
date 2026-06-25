@@ -1,75 +1,62 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 export const Navigation = (props) => {
   const location = useLocation();
+  const [open, setOpen] = useState(false);
 
+  // Close the mobile menu whenever the route changes
   useEffect(() => {
-    const links = document.querySelectorAll('.navbar-nav a'); // Select all links in the navbar
+    setOpen(false);
+  }, [location]);
 
-    // Remove page-active class from all links
-    links.forEach((link) => {
-      link.classList.remove('page-active');
-    });
-
-    // Add page-active class to the link that matches the current URL
-    links.forEach((link) => {
-      const linkHref = link.getAttribute('href').replace('/#', ''); // Remove '/#' for matching
-      const currentPath = location.pathname; // Get current hash without the '#'
-
-      if (linkHref === currentPath) {
-        link.classList.add('page-active');
-      }
-    });
-  }, [location]); // Re-run every time the URL changes
+  const isActive = (path) => location.pathname === path;
 
   return (
-    <nav id="menu" className="navbar navbar-default">
-      <div className="container">
-        <div className="navbar-header">
-          <button
-            type="button"
-            className="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#bs-example-navbar-collapse-1"
-          >
-            {" "}
-            <span className="sr-only">Toggle navigation</span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
-          </button>
-          <a className="navbar-brand page-scroll" href="/">
-            <span>BISERICA</span>AVA
-          </a>{" "}
-        </div>
+    <nav id="menu" className="site-nav">
+      <div className="container site-nav__inner">
+        <a className="brand" href="/" aria-label="Biserica AVA — acasă">
+          <strong>biserica</strong>ava
+        </a>
+
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-label="Meniu"
+          aria-expanded={open}
+          aria-controls="primary-navigation"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
         <div
-          className="collapse navbar-collapse"
-          id="bs-example-navbar-collapse-1"
+          id="primary-navigation"
+          className={`nav-links${open ? " is-open" : ""}`}
         >
-          <ul className="nav navbar-nav navbar-right">
-            <li>
-              <a href="/#/despre-noi" className="page-scroll">
-                Despre noi
-              </a>
-            </li>
-            <li>
-              <a href="/#/departamente" className="page-scroll">
-                Departamente
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="page-scroll">
-                Contact
-              </a>
-            </li>
-            <li>
-              <a href="https://donate.stripe.com/14k02gbBvdlN8rC3cc" target="blank_" class="donate-button">
-                Donează online
-              </a>
-            </li>
-          </ul>
+          <a
+            href="/#/despre-noi"
+            className={isActive("/despre-noi") ? "page-active" : ""}
+          >
+            Despre noi
+          </a>
+          <a
+            href="/#/departamente"
+            className={isActive("/departamente") ? "page-active" : ""}
+          >
+            Departamente
+          </a>
+          <a href="#contact">Contact</a>
+          <a
+            href="https://donate.stripe.com/14k02gbBvdlN8rC3cc"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn--cta"
+          >
+            Donează online
+          </a>
         </div>
       </div>
     </nav>

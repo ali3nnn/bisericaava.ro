@@ -1,6 +1,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Theme: "sacred" (default) | "reverent" | "airy".
+       Change DEFAULT_THEME to switch the site permanently,
+       or preview live with ?theme=reverent / ?theme=airy -->
+  <script>
+    (function () {
+      var DEFAULT_THEME = "airy";
+      var allowed = ["sacred", "reverent", "airy"];
+      var param;
+      try { param = new URLSearchParams(location.search).get("theme"); } catch (e) {}
+      var theme = allowed.indexOf(param) !== -1 ? param : DEFAULT_THEME;
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
   <link
     rel="shortcut icon"
     href="img/favicon/favicon.ico"
@@ -21,40 +35,27 @@
   />
 
   <link rel="preload" href="img/splash.webp" as="image" type="image/webp" />
-  <link rel="preload" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900" as="style" />
 
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- Icons (Font Awesome, local) -->
   <link
     rel="stylesheet"
     type="text/css"
     href="fonts/font-awesome/css/font-awesome.css"
   />
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+  <!-- Fonts: Fraunces (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    rel="stylesheet"
-    type="text/css"
-    href="css/nivo-lightbox/nivo-lightbox.css"
-  />
-  <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/default.css" />
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
-  <link
-    href="https://fonts.googleapis.com/css?family=Lato:400,700"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900"
-    rel="stylesheet"
-  />
-  <title>Biserica AVA</title>
+
+  <title>Biserica AVA — Comunitate creștină baptistă în Târgoviște</title>
   <meta name="description" content="O comunitate de oameni nascuti din nou" />
   <meta name="author" content="@BisericaAva" />
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="page-top">
   <div id="root"></div>
-  <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
