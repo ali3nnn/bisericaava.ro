@@ -1,32 +1,27 @@
 import React from "react";
-import "../App.css";
 import { convertStringToHTML } from "../utils"
-
-// function convertStringToHTML(htmlString) {
-//     return <div dangerouslySetInnerHTML={{ __html: htmlString }} />;
-// }
 
 export const DepartmentsPage = ({ data }) => {
     return (
         <div className="container">
-            <div className="departments-container">
-                <div className="department-item first-item">
-                    <div className="department-content">
-                        <h3 className="department-name">Folosește-ți Darurile pentru Gloria lui Dumnezeu</h3>
-                        <p className="department-description">Apostolul Pavel ne vorbește despre biserică în termenii unui organism viu. Fiecare membru este un mădular a cărui implicare asigură sănătatea și dezvoltarea întregului trup (Efeseni 4).</p>
+            <div className="dept-list">
+                <div className="dept-row dept-row--intro" data-reveal>
+                    <div className="dept-row__content">
+                        <h3 className="dept-row__name">Folosește-ți Darurile pentru Gloria lui Dumnezeu</h3>
+                        <p className="dept-row__desc">Apostolul Pavel ne vorbește despre biserică în termenii unui organism viu. Fiecare membru este un mădular a cărui implicare asigură sănătatea și dezvoltarea întregului trup (Efeseni 4).</p>
                     </div>
                 </div>
 
                 {Object.keys(data).map((key) => {
                     const { image, name, content } = data[key];
                     return (
-                        <div key={key} className="department-item" id={name.toLowerCase()}>
-                            <div className="department-image-container">
-                                <img src={image} alt={name} className="department-image" loading="lazy" />
+                        <div key={key} className="dept-row" id={name.toLowerCase()} data-reveal>
+                            <div className="dept-row__media">
+                                <img src={image} alt={name} loading="lazy" />
                             </div>
-                            <div className="department-content">
-                                <h3 className="department-name">{name}</h3>
-                                <p className="department-description">{convertStringToHTML(content)}</p>
+                            <div className="dept-row__content">
+                                <h3 className="dept-row__name">{name}</h3>
+                                <div className="dept-row__desc">{convertStringToHTML(content)}</div>
                             </div>
                         </div>
                     );
