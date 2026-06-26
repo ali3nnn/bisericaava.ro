@@ -6,11 +6,13 @@ import './styles/components.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react"
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
     <SpeedInsights />
+    <Analytics />
   </React.StrictMode>,
   document.getElementById('root')
 );
