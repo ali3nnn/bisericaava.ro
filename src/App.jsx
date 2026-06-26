@@ -16,6 +16,7 @@ import { ArticlePage } from "./pages/article";
 import { PageHeader } from "./pages/page-header";
 import { DepartmentsPage } from "./pages/departmentsPage";
 import { AdminPage } from "./pages/admin";
+import { Chatbot } from "./components/chatbot";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import "./App.css";
@@ -77,6 +78,7 @@ const Layout = ({ data }) => {
         <Route path="/admin" element={<AdminPage />} />
       </Routes>
       {!isAdmin && <Contact data={data.Contact} />}
+      {!isAdmin && <Chatbot />}
     </>
   );
 };
