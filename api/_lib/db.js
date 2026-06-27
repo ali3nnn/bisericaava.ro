@@ -25,4 +25,35 @@ async function setContent(doc) {
   `;
 }
 
-module.exports = { getSql, getContent, setContent };
+// Ensure the conversations table exists (runs once per process). This makes
+// chat logging work even if scripts/db-setup.mjs hasn't been re-run.
+let _conversationsReady;
+function ensureConversationsTable() {
+  if (!_conversationsReady) {
+    const sql = getSql();
+    _conversationsReady = sql`
+      create table if not exists conversations (
+        id          text primary key,
+        messages    jsonb not null,
+        created_at  timestamptz not null default now(),
+        updated_at  timestamptz not null default now()
+      )
+    `;
+  }
+  return _conversationsReady;
+}
+
+// Upsert a whole conversation by id. The client sends the full transcript each
+// turn, so last-write-wins keeps the complete conversation without duplicates.
+async function saveConversation(id, messages) {
+  await ensureConversationsTable();
+  const sql = getSql();
+  await sql`
+    insert into conversations (id, messages, updated_at)
+    values (${id}, ${JSON.stringify(messages)}::jsonb, now())
+    on conflict (id) do update
+      set messages = excluded.messages, updated_at = now()
+  `;
+}
+
+module.exports = { getSql, getContent, setContent, saveConversation };

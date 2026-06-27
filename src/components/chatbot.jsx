@@ -38,6 +38,12 @@ export const Chatbot = () => {
   const baseTextRef = useRef("");
   const autoSendRef = useRef(true);
   const sendMessageRef = useRef(null);
+  // One id per page load, so each conversation is stored as its own record.
+  const conversationIdRef = useRef(
+    typeof crypto !== "undefined" && crypto.randomUUID
+      ? crypto.randomUUID()
+      : `c-${Date.now()}-${Math.random().toString(36).slice(2)}`
+  );
 
   // Keep the conversation scrolled to the latest message.
   useEffect(() => {
@@ -112,6 +118,7 @@ export const Chatbot = () => {
         headers: { "Content-Type": "application/json" },
         // Send only the role/content the API expects (skip the welcome line).
         body: JSON.stringify({
+          conversationId: conversationIdRef.current,
           messages: next
             .filter((m) => m !== WELCOME)
             .map((m) => ({ role: m.role, content: m.content })),

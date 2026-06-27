@@ -38,6 +38,15 @@ async function main() {
     )
   `;
 
+  await sql`
+    create table if not exists conversations (
+      id          text primary key,
+      messages    jsonb not null,           -- full chat transcript
+      created_at  timestamptz not null default now(),
+      updated_at  timestamptz not null default now()
+    )
+  `;
+
   console.log("Seeding content (only if empty)…");
   await sql`
     insert into site_content (id, doc)

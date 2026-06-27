@@ -1,7 +1,7 @@
 // AI chat agent for Biserica AVA. Loads the site content from Neon and injects
 // it into the system prompt so the assistant only answers about this website.
 const { OpenAI } = require("openai");
-const { getContent } = require("./_lib/db");
+const { getContent, saveConversation } = require("./_lib/db");
 
 const MODEL = process.env.OPENAI_MODEL || "gpt-4o-mini";
 const MAX_HISTORY = 10; // last messages kept as context for the assistant
@@ -124,6 +124,18 @@ function sanitizeHistory(messages) {
     .slice(-MAX_HISTORY);
 }
 
+// Full, untruncated transcript for storage (the model context uses the trimmed
+// sanitizeHistory instead).
+function fullTranscript(messages) {
+  if (!Array.isArray(messages)) return [];
+  return messages
+    .filter((m) => m && typeof m.content === "string" && m.content.trim())
+    .map((m) => ({
+      role: m.role === "assistant" ? "assistant" : "user",
+      content: m.content,
+    }));
+}
+
 // ---- Handler ---------------------------------------------------------------
 
 module.exports = async (req, res) => {
@@ -167,6 +179,22 @@ module.exports = async (req, res) => {
         completion.choices[0].message &&
         completion.choices[0].message.content) ||
       "Îmi pare rău, nu am putut genera un răspuns. Te rog încearcă din nou.";
+
+    // Persist the full conversation (best-effort — never break the chat on a
+    // DB error). The client sends the whole transcript each turn.
+    try {
+      const conversationId =
+        body && typeof body.conversationId === "string" && body.conversationId.trim()
+          ? body.conversationId.trim().slice(0, 100)
+          : `conv-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+      const transcript = [
+        ...fullTranscript(body && body.messages),
+        { role: "assistant", content: reply.trim() },
+      ];
+      await saveConversation(conversationId, transcript);
+    } catch (e) {
+      console.error("saveConversation failed:", (e && e.message) || e);
+    }
 
     res.setHeader("Cache-Control", "no-store");
     res.status(200).json({ reply: reply.trim() });
