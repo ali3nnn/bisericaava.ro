@@ -44,9 +44,9 @@ export const Header = (props) => {
         </div>
       </div>
 
-      <a href="#about" className="hero__scroll" aria-label="Derulează în jos">
+      {/* <a href="#about" className="hero__scroll" aria-label="Derulează în jos">
         <span className="visually-hidden">Derulează în jos</span>
-      </a>
+      </a> */}
     </header>
   );
 };

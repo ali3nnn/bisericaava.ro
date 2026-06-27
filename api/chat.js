@@ -4,7 +4,7 @@ const { OpenAI } = require("openai");
 const { getContent } = require("./_lib/db");
 
 const MODEL = process.env.OPENAI_MODEL || "gpt-4o-mini";
-const MAX_HISTORY = 12; // user/assistant turns kept from the conversation
+const MAX_HISTORY = 10; // last messages kept as context for the assistant
 const MAX_MSG_CHARS = 2000; // per-message cap to keep prompts bounded
 const CONTENT_TTL_MS = 60 * 1000; // cache the flattened content briefly
 
@@ -101,7 +101,7 @@ function buildSystemPrompt(contentText) {
     "Răspunzi DOAR pe baza informațiilor despre această biserică și acest site, furnizate mai jos.",
     "",
     "Reguli:",
-    "- Răspunde exclusiv în limba română, pe un ton cald, politicos și respectuos.",
+    "- Răspunde ÎNTOTDEAUNA în aceeași limbă în care a scris utilizatorul (de exemplu română, engleză, franceză, germană, spaniolă, italiană etc.), pe un ton cald, politicos și respectuos. Dacă limba mesajului nu este clară, folosește limba română.",
     "- Folosește NUMAI informațiile din secțiunea „CONȚINUTUL SITE-ULUI”. Nu inventa programe, nume, date, adrese sau detalii care nu apar acolo.",
     "- Dacă întrebarea nu are legătură cu Biserica AVA sau cu informațiile de pe site (de exemplu politică, sport, teme generale, alte organizații), refuză politicos și invită utilizatorul să pună o întrebare despre biserică.",
     "- Dacă informația cerută nu se găsește în conținut, spune sincer că nu o ai și recomandă contactarea bisericii folosind datele de contact de mai jos.",

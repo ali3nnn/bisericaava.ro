@@ -43,8 +43,8 @@
 
 /* ---- Panel ---- */
 .chatbot__panel {
-  width: min(380px, calc(100vw - 2rem));
-  height: min(560px, calc(100vh - 7rem));
+  width: min(420px, calc(100vw - 2rem));
+  height: min(640px, calc(100vh - 6rem));
   background: var(--color-surface);
   color: var(--color-text);
   border: 1px solid var(--color-border);
@@ -149,6 +149,31 @@
   40% { opacity: 1; }
 }
 
+/* ---- Language hint (while recording) ---- */
+.chatbot__lang-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin: 0 var(--space-4) var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  text-align: center;
+  animation: chatbot-in var(--dur) var(--ease);
+}
+.chatbot__rec-dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  animation: chatbot-blink 1.4s infinite both;
+}
+
 /* ---- Input ---- */
 .chatbot__input {
   display: flex;
@@ -161,7 +186,8 @@
 .chatbot__input textarea {
   flex: 1;
   resize: none;
-  max-height: 120px;
+  max-height: 140px;
+  overflow-y: auto;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--space-3) var(--space-4);
@@ -192,6 +218,46 @@
 .chatbot__send:hover:not(:disabled) { background: var(--color-cta-hover); }
 .chatbot__send:disabled { opacity: 0.5; cursor: not-allowed; }
 
+/* ---- Voice / microphone ---- */
+.chatbot__mic {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+.chatbot__mic:hover:not(:disabled) { background: var(--color-surface-alt); }
+.chatbot__mic:disabled { opacity: 0.5; cursor: not-allowed; }
+.chatbot__mic--recording {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: #fff;
+  animation: chatbot-pulse 1.4s ease-in-out infinite;
+}
+@keyframes chatbot-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5); }
+  50% { box-shadow: 0 0 0 7px rgba(239, 68, 68, 0); }
+}
+.chatbot__spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: chatbot-spin 0.7s linear infinite;
+}
+@keyframes chatbot-spin {
+  to { transform: rotate(360deg); }
+}
+
 /* ---- Disclaimer ---- */
 .chatbot__disclaimer {
   margin: 0;
@@ -206,7 +272,14 @@
 
 @media (max-width: 480px) {
   .chatbot__panel {
-    width: calc(100vw - 1.5rem);
-    height: calc(100vh - 6rem);
+    position: fixed;
+    inset: 0;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+  }
+  /* Full-screen panel has its own close button in the header. */
+  .chatbot--open .chatbot__bubble {
+    display: none;
   }
 }

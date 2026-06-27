@@ -15,6 +15,8 @@ const handlers = {
   "/api/me": require("../api/me.js"),
   "/api/content": require("../api/content.js"),
   "/api/upload": require("../api/upload.js"),
+  "/api/chat": require("../api/chat.js"),
+  "/api/transcribe": require("../api/transcribe.js"),
 };
 const imageHandler = require("../api/images/[key].js");
 
