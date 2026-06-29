@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import { assetUrl } from "../utils";
 
 export const Departments = (props) => {
   return (
@@ -17,14 +18,14 @@ export const Departments = (props) => {
           {props.data
             ? props.data.map((d, i) => (
                 <Link
-                  to="/departamente"
+                  href="/departamente"
                   key={`${d.name}-${i}`}
                   className="bento__item"
                   aria-label={d.name}
                 >
                   <img
                     className="bento__img"
-                    src={d.image}
+                    src={assetUrl(d.image)}
                     alt={d.name}
                     loading="lazy"
                   />

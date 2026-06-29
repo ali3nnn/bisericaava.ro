@@ -47,6 +47,16 @@ async function main() {
     )
   `;
 
+  await sql`
+    create table if not exists login_attempts (
+      ip            text primary key,       -- client IP being throttled
+      fails         int not null default 0,
+      first_fail_at timestamptz not null default now(),
+      last_fail_at  timestamptz not null default now(),
+      locked_until  timestamptz             -- null until the IP is locked out
+    )
+  `;
+
   console.log("Seeding content (only if empty)…");
   await sql`
     insert into site_content (id, doc)

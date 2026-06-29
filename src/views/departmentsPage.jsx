@@ -1,5 +1,5 @@
 import React from "react";
-import { convertStringToHTML } from "../utils"
+import { convertStringToHTML, assetUrl } from "../utils"
 
 export const DepartmentsPage = ({ data }) => {
     return (
@@ -17,7 +17,7 @@ export const DepartmentsPage = ({ data }) => {
                     return (
                         <div key={key} className="dept-row" id={name.toLowerCase()} data-reveal>
                             <div className="dept-row__media">
-                                <img src={image} alt={name} loading="lazy" />
+                                <img src={assetUrl(image)} alt={name} loading="lazy" />
                             </div>
                             <div className="dept-row__content">
                                 <h3 className="dept-row__name">{name}</h3>

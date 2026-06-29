@@ -161,7 +161,7 @@ module.exports = async (req, res) => {
   try {
     const contentText = await getContentText();
     const content = buildSystemPrompt(contentText)
-    console.log(content)
+    // console.log(content)
     const openai = getOpenAI();
     const completion = await openai.chat.completions.create({
       model: MODEL,

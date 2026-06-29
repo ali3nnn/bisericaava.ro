@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef, useState } from "react";
 
 // Language for voice input (BCP-47). Change this one line to switch languages,

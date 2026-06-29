@@ -1,13 +1,15 @@
+"use client";
+
 import React, { useState, useEffect, useCallback } from "react";
 
 const photos = [
-  { src: "img/tort.webp", alt: "Sărbătoare în comunitatea AVA" },
-  { src: "img/1.webp", alt: "Părtășie la Biserica AVA" },
-  { src: "img/2.webp", alt: "Întâlnire a comunității AVA" },
-  { src: "img/3.webp", alt: "Membri ai Bisericii AVA" },
-  { src: "img/4.webp", alt: "Activitate a Bisericii AVA" },
-  { src: "img/5.webp", alt: "Comunitatea AVA împreună" },
-  { src: "img/6.webp", alt: "Eveniment la Biserica AVA" },
+  { src: "/img/tort.webp", alt: "Sărbătoare în comunitatea AVA" },
+  { src: "/img/1.webp", alt: "Părtășie la Biserica AVA" },
+  { src: "/img/2.webp", alt: "Întâlnire a comunității AVA" },
+  { src: "/img/3.webp", alt: "Membri ai Bisericii AVA" },
+  { src: "/img/4.webp", alt: "Activitate a Bisericii AVA" },
+  { src: "/img/5.webp", alt: "Comunitatea AVA împreună" },
+  { src: "/img/6.webp", alt: "Eveniment la Biserica AVA" },
 ];
 
 export const Gallery = (props) => {

@@ -4,10 +4,10 @@ export const Header = (props) => {
   return (
     <header id="header" className="hero">
       <img
-        src="img/splash.webp"
+        src="/img/splash.webp"
         alt="Comunitatea Bisericii AVA în închinare"
         className="hero__bg"
-        fetchpriority="high"
+        fetchPriority="high"
       />
       <div className="hero__inner container">
         <div className="hero__content">

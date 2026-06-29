@@ -1,23 +1,26 @@
-import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+"use client";
 
-export const Navigation = (props) => {
-  const location = useLocation();
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+export const Navigation = () => {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   // Close the mobile menu whenever the route changes
   useEffect(() => {
     setOpen(false);
-  }, [location]);
+  }, [pathname]);
 
-  const isActive = (path) => location.pathname === path;
+  const isActive = (path) => pathname === path;
 
   return (
     <nav id="menu" className="site-nav">
       <div className="container site-nav__inner">
-        <a className="brand" href="/" aria-label="Biserica AVA — acasă">
+        <Link className="brand" href="/" aria-label="Biserica AVA — acasă">
           <strong>biserica</strong>ava
-        </a>
+        </Link>
 
         <button
           type="button"
@@ -36,19 +39,19 @@ export const Navigation = (props) => {
           id="primary-navigation"
           className={`nav-links${open ? " is-open" : ""}`}
         >
-          <a
-            href="/#/despre-noi"
+          <Link
+            href="/despre-noi"
             className={isActive("/despre-noi") ? "page-active" : ""}
           >
             Despre noi
-          </a>
-          <a
-            href="/#/departamente"
+          </Link>
+          <Link
+            href="/departamente"
             className={isActive("/departamente") ? "page-active" : ""}
           >
             Departamente
-          </a>
-          <a href="#contact">Contact</a>
+          </Link>
+          <a href="/#contact">Contact</a>
           <a
             href="https://donate.stripe.com/14k02gbBvdlN8rC3cc"
             target="_blank"

@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { usePathname } from "next/navigation";
 
 /**
  * Reveals elements marked with [data-reveal] / [data-reveal-children]
@@ -8,7 +10,7 @@ import { useLocation } from "react-router-dom";
  * prefers-reduced-motion and degrades gracefully without IO support.
  */
 export const ScrollReveal = () => {
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -45,7 +47,7 @@ export const ScrollReveal = () => {
       clearTimeout(t);
       io.disconnect();
     };
-  }, [location]);
+  }, [pathname]);
 
   return null;
 };

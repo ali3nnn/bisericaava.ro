@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect, useCallback } from "react";
 
 /* ---------------- helpers ---------------- */
@@ -108,14 +110,31 @@ const ImageField = ({ label, value, onChange }) => {
 
 /* ---------------- login ---------------- */
 
+// "75" -> "1:15", "15" -> "15s"
+const formatWait = (s) => {
+  const m = Math.floor(s / 60);
+  const sec = s % 60;
+  return m > 0 ? `${m}:${String(sec).padStart(2, "0")}` : `${sec}s`;
+};
+
 const Login = ({ onSuccess }) => {
   const [u, setU] = useState("");
   const [p, setP] = useState("");
   const [err, setErr] = useState("");
   const [busy, setBusy] = useState(false);
+  const [cooldown, setCooldown] = useState(0); // seconds left before a retry is allowed
+
+  // Tick the cooldown down to zero. The effect re-runs on each decrement,
+  // re-arming the next tick until it reaches 0.
+  useEffect(() => {
+    if (cooldown <= 0) return undefined;
+    const id = setTimeout(() => setCooldown((s) => s - 1), 1000);
+    return () => clearTimeout(id);
+  }, [cooldown]);
 
   const submit = async (e) => {
     e.preventDefault();
+    if (cooldown > 0) return;
     setBusy(true);
     setErr("");
     try {
@@ -124,7 +143,10 @@ const Login = ({ onSuccess }) => {
         body: JSON.stringify({ username: u, password: p }),
       });
       const j = await r.json().catch(() => ({}));
-      if (!r.ok) throw new Error(j.error || "Autentificare eșuată");
+      if (!r.ok) {
+        if (j.retryAfter > 0) setCooldown(j.retryAfter);
+        throw new Error(j.error || "Autentificare eșuată");
+      }
       onSuccess();
     } catch (ex) {
       setErr(ex.message);
@@ -133,6 +155,8 @@ const Login = ({ onSuccess }) => {
     }
   };
 
+  const locked = cooldown > 0;
+
   return (
     <div className="admin-login">
       <form className="admin-login__card" onSubmit={submit}>
@@ -140,9 +164,19 @@ const Login = ({ onSuccess }) => {
         <p>Autentifică-te pentru a edita conținutul site-ului.</p>
         <Field label="Utilizator" value={u} onChange={setU} full />
         <Field label="Parolă" value={p} onChange={setP} type="password" full />
-        {err && <p className="admin-error" style={{ marginBottom: "1rem" }}>{err}</p>}
-        <button className="btn btn--primary" type="submit" disabled={busy} style={{ width: "100%" }}>
-          {busy ? "Se autentifică…" : "Intră"}
+        {err && <p className="admin-error" style={{ marginBottom: locked ? "0.5rem" : "1rem" }}>{err}</p>}
+        {locked && (
+          <p className="admin-hint" style={{ marginBottom: "1rem" }}>
+            Prea multe încercări. Poți încerca din nou în {formatWait(cooldown)}.
+          </p>
+        )}
+        <button
+          className="btn btn--primary"
+          type="submit"
+          disabled={busy || locked}
+          style={{ width: "100%" }}
+        >
+          {busy ? "Se autentifică…" : locked ? `Așteaptă ${formatWait(cooldown)}` : "Intră"}
         </button>
       </form>
     </div>
